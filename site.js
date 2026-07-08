@@ -37,6 +37,35 @@
     return "https://wa.me/" + SITE.whatsapp + "?text=" + encodeURIComponent(t);
   }
 
+  /* ---- small inline icons ----------------------------------------------- */
+  var IC = {
+    phone: '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.24 1.02l-2.21 2.2z"/></svg>',
+    mail: '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2.24V18h16V6.24l-8 5.99-8-5.99z"/></svg>',
+    clock: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+    star: '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77 5.82 21l1.18-6.86-5-4.87 7.1-1.01z"/></svg>',
+    wa: '<svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.16c-.24.68-1.42 1.32-1.96 1.36-.5.05-.98.23-3.3-.69-2.79-1.1-4.57-3.94-4.71-4.12-.14-.18-1.13-1.5-1.13-2.86 0-1.36.71-2.03.97-2.31.24-.26.53-.32.71-.32.18 0 .35 0 .5.01.16.01.38-.06.59.45.24.57.79 1.96.86 2.1.07.14.12.3.02.48-.09.18-.14.29-.28.45-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.18-.21.68-.79.86-1.07.18-.28.36-.23.6-.14.24.09 1.55.73 1.81.86.26.14.44.21.5.32.07.11.07.66-.17 1.34z"/></svg>',
+    up: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>',
+    arrow: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>',
+  };
+
+  function backBtn(href, variant) {
+    return '<a class="backbtn backbtn--' + variant + '" href="' + href + '" data-back>' +
+      IC.arrow + 'Back</a>';
+  }
+
+  /* ---- chrome: utility bar + nav + footer ------------------------------- */
+  function buildUtilBar() {
+    return '' +
+      '<div class="ubar"><div class="wrap">' +
+        '<div class="ubar__left">' +
+          '<a href="' + telHref() + '">' + IC.phone + esc(SITE.phone) + '</a>' +
+          '<a class="ubar__email" href="mailto:' + SITE.email + '">' + IC.mail + esc(SITE.email) + '</a>' +
+          '<span class="ubar__hours">' + IC.clock + esc(SITE.hours) + '</span>' +
+        '</div>' +
+        '<span class="ubar__badge">' + IC.star + 'Authorised Unbrako Stockist</span>' +
+      '</div></div>';
+  }
+
   /* ---- chrome: nav + footer --------------------------------------------- */
   function buildNav(active) {
     var links = [
@@ -64,24 +93,82 @@
   }
 
   function buildFooter() {
+    var cats = CATEGORIES.slice(0, 6).map(function (c) {
+      return '<li><a href="category.html?cat=' + encodeURIComponent(c.slug) + '">' + esc(c.name) + '</a></li>';
+    }).join("");
     return '' +
       '<footer class="foot"><div class="wrap">' +
-        '<div class="foot__brand"><span class="nav__dot"></span><span>' +
-          esc(SITE.short.toUpperCase()) + '</span></div>' +
-        '<p class="foot__meta">© ' + SITE.estd + '–2026 · ' + esc(SITE.tagline) +
-          ' · Nagdevi, Mumbai · DIN · ISO · IS · ASTM</p>' +
+        '<div class="foot__cols">' +
+          '<div>' +
+            '<div class="foot__brand2"><span class="nav__dot"></span><span>' +
+              esc(SITE.short.toUpperCase()) + '</span></div>' +
+            '<p>' + esc(SITE.tagline) + '</p>' +
+            '<p>' + esc(SITE.address) + '</p>' +
+          '</div>' +
+          '<div><h4>Explore</h4><ul>' +
+            '<li><a href="products.html">All Products</a></li>' +
+            '<li><a href="products.html#categories">Product Range</a></li>' +
+            '<li><a href="about.html">About Us</a></li>' +
+            '<li><a href="contact.html">Contact</a></li>' +
+          '</ul></div>' +
+          '<div><h4>Our Range</h4><ul>' + cats + '</ul></div>' +
+          '<div class="foot__contact"><h4>Get in touch</h4><ul>' +
+            '<li><a href="' + telHref() + '">' + esc(SITE.phone) + '</a></li>' +
+            '<li><a href="mailto:' + SITE.email + '">' + esc(SITE.email) + '</a></li>' +
+            '<li><a href="' + waHref(null) + '" target="_blank" rel="noopener">WhatsApp us</a></li>' +
+            '<li>' + esc(SITE.hours) + '</li>' +
+          '</ul></div>' +
+        '</div>' +
+        '<div class="foot__bottom">' +
+          '<p class="foot__meta">© ' + SITE.estd + '–2026 · ' + esc(SITE.name) + ' · Nagdevi, Mumbai</p>' +
+          '<div class="foot__badges">' +
+            '<span class="foot__badge">DIN</span><span class="foot__badge">ISO</span>' +
+            '<span class="foot__badge">IS</span><span class="foot__badge">ASTM</span>' +
+          '</div>' +
+        '</div>' +
       '</div></footer>';
+  }
+
+  function buildFabs() {
+    return '' +
+      '<div class="fab-stack">' +
+        '<button class="fab fab--top" data-top aria-label="Back to top">' + IC.up + '</button>' +
+        '<a class="fab fab--wa" href="' + waHref(null) + '" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">' + IC.wa + '</a>' +
+      '</div>';
   }
 
   function mountChrome(active) {
     var nm = document.querySelector("[data-nav-mount]");
-    if (nm) nm.innerHTML = buildNav(active);
+    if (nm) nm.innerHTML = buildUtilBar() + buildNav(active);
     var fm = document.querySelector("[data-footer-mount]");
     if (fm) fm.innerHTML = buildFooter();
     // burger toggle
     var burger = document.querySelector(".nav__burger");
     var menu = document.querySelector(".nav__links");
     if (burger && menu) burger.addEventListener("click", function () { menu.classList.toggle("is-open"); });
+
+    // back button on the page-header band (product page injects its own)
+    var ph = document.querySelector(".phead .wrap");
+    if (ph) {
+      var fallback = active === "range" ? "products.html" : "index.html";
+      ph.insertAdjacentHTML("afterbegin", backBtn(fallback, "dark"));
+    }
+
+    // floating action buttons
+    document.body.insertAdjacentHTML("beforeend", buildFabs());
+    var topBtn = document.querySelector("[data-top]");
+    if (topBtn) {
+      topBtn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+      var onScroll = function () { topBtn.classList.toggle("is-shown", window.pageYOffset > 420); };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+
+    // delegated back-navigation
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-back]");
+      if (b && history.length > 1) { e.preventDefault(); history.back(); }
+    });
   }
 
   /* ---- card markup ------------------------------------------------------ */
@@ -186,6 +273,7 @@
     var p = PRODUCTS.find(function (x) { return x.slug === slug; });
     if (!p) {
       host.innerHTML = '<div class="wrap" style="padding:80px 28px;text-align:center;">' +
+        backBtn("products.html", "light") +
         '<h1 style="font-weight:600;">Product not found</h1>' +
         '<p class="note"><a href="products.html">← Back to all products</a></p></div>';
       return;
@@ -222,6 +310,7 @@
 
     host.innerHTML = '' +
       '<div class="pd"><div class="wrap">' +
+        backBtn("category.html?cat=" + p.category, "light") +
         '<p class="crumb"><a href="products.html">Products</a> &nbsp;/&nbsp; ' +
           '<a href="category.html?cat=' + p.category + '">' + esc(catName(p.category)) + '</a> &nbsp;/&nbsp; ' +
           esc(p.name) + '</p>' +
