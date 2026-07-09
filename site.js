@@ -19,17 +19,15 @@
 
   /* ---- enquiry / call links --------------------------------------------- */
   function enquireHref(product) {
-    var subj = product
-      ? "Enquiry: " + product.name
-      : "Enquiry from website";
     var body = product
-      ? "Hello " + SITE.name + ",%0D%0A%0D%0APlease send availability and a quote for:%0D%0A" +
-        "Product: " + encodeURIComponent(product.name) + "%0D%0A" +
-        "Standard: " + encodeURIComponent(product.standard) + "%0D%0A" +
-        "Size / grade: %0D%0AQuantity: %0D%0A%0D%0AThank you."
+      ? "Hello " + SITE.name + ",\r\n\r\nPlease send availability and a quote for:\r\n" +
+        "Product: " + product.name + "\r\n" +
+        "Standard: " + product.standard + "\r\n" +
+        "Size / grade: \r\nQuantity: \r\n\r\nThank you."
       : "";
-    return "mailto:" + SITE.email + "?subject=" + encodeURIComponent(subj) +
-           (body ? "&body=" + body : "");
+    // Gmail compose POPUP (overlay), address pre-filled in To, subject left blank.
+    return "https://mail.google.com/mail/u/0/?tf=cm&to=" + encodeURIComponent(SITE.email) +
+           (body ? "&body=" + encodeURIComponent(body) : "");
   }
   function telHref() { return "tel:" + SITE.phone.replace(/[^+\d]/g, ""); }
   function waHref(product) {
@@ -87,7 +85,7 @@
         '</a>' +
         '<button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>' +
         '<div class="nav__links">' + items +
-          '<a class="nav__cta" href="' + enquireHref(null) + '">GET A QUOTE</a>' +
+          '<a class="nav__cta" href="' + enquireHref(null) + '" target="_blank" rel="noopener">GET A QUOTE</a>' +
         '</div>' +
       '</nav>';
   }
@@ -282,23 +280,30 @@
 
     var specs = p.specs.map(function (s) {
       return '<div><dt>' + esc(s.k) + '</dt><dd>' + esc(s.v) + '</dd></div>';
+    }).join("") +
+      '<div><dt>Material</dt><dd>' + esc(p.material) + '</dd></div>' +
+      '<div><dt>Length range</dt><dd>' + esc(p.lengthRange) + '</dd></div>' +
+      '<div><dt>Finish</dt><dd>' + esc(p.finish) + '</dd></div>';
+
+    // standards list (from the standard string + grade + any "conforms to" spec)
+    var stdItems = p.standard.split("·").map(function (s) { return s.trim(); }).filter(Boolean);
+    stdItems.push(p.grade);
+    var conf = p.specs.find(function (s) { return /conform/i.test(s.k); });
+    if (conf) stdItems.push(conf.v + " — mechanical properties");
+    var seen = {};
+    var stdRows = stdItems.filter(function (s) {
+      if (seen[s]) return false; seen[s] = 1; return true;
+    }).map(function (s) {
+      return '<div class="cfg__stdrow"><span class="cfg__stddot"></span>' + esc(s) + '</div>';
     }).join("");
 
-    var hasPrices = p.prices.some(function (r) { return r.price && r.price !== "—"; });
-    var rows = p.prices.map(function (r) {
-      return '<tr><td>' + esc(r.size) + '</td><td>' +
-        (r.price && r.price !== "—" ? "₹ " + esc(r.price) : "On enquiry") + '</td></tr>';
+    var sizeBtns = p.prices.map(function (r) {
+      return '<button class="cfg__size" type="button" data-size="' + esc(r.size) + '">' + esc(r.size) + '</button>';
     }).join("");
 
-    var priceBlock = '' +
-      '<h2 class="sec-title">Indicative price list</h2>' +
-      '<table class="ptable"><thead><tr><th>Size</th><th>₹ / 100 pcs</th></tr></thead>' +
-      '<tbody>' + rows + '</tbody></table>' +
-      '<p class="note">' +
-        (hasPrices
-          ? 'Indicative list prices in INR per 100 pieces, exclusive of GST (Unbrako DFL-20, w.e.f. 1 April 2026). Subject to change — final pricing and availability confirmed on enquiry.'
-          : 'Pricing for this product is confirmed on enquiry — send us your size, grade and quantity for a prompt quote.') +
-      '</p>';
+    var svgWa = '<svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.42 1.32-1.95 1.36-.5.05-.5.4-3.15-.66-2.66-1.06-4.3-3.79-4.43-3.97-.13-.18-1.05-1.4-1.05-2.67 0-1.27.67-1.9.9-2.16.24-.26.52-.32.7-.32.17 0 .35 0 .5.01.16.01.38-.06.59.45.24.58.8 2 .87 2.14.07.14.12.31.02.5-.09.18-.14.29-.28.45-.14.16-.29.35-.42.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.86.27.13.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>';
+    var svgMail = '<svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2.24V18h16V6.24l-8 5.99-8-5.99z"/></svg>';
+    var svgCall = '<svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>';
 
     // related
     var related = PRODUCTS.filter(function (x) { return x.category === p.category && x.slug !== p.slug; }).slice(0, 4);
@@ -314,30 +319,118 @@
         '<p class="crumb"><a href="products.html">Products</a> &nbsp;/&nbsp; ' +
           '<a href="category.html?cat=' + p.category + '">' + esc(catName(p.category)) + '</a> &nbsp;/&nbsp; ' +
           esc(p.name) + '</p>' +
-        '<div class="pd__top">' +
-          '<div class="pd__media"><img src="' + p.img + '" alt="' + esc(p.name) + '"></div>' +
-          '<div>' +
-            '<p class="pd__cat">' + esc(catName(p.category)) + '</p>' +
-            '<h1 class="pd__name">' + esc(p.name) + '</h1>' +
-            '<p class="pd__blurb">' + esc(p.blurb) + '</p>' +
-            '<div class="tags">' +
-              '<span class="tag">' + esc(p.standard) + '</span>' +
-              '<span class="tag">' + esc(p.grade) + '</span>' +
-              '<span class="tag">' + esc(p.sizeRange) + '</span>' +
+        '<div class="cfg">' +
+          '<div class="cfg__main">' +
+            '<div class="cfg__top">' +
+              '<div class="cfg__media"><img src="' + p.img + '" alt="' + esc(p.name) + '"></div>' +
+              '<div>' +
+                '<p class="cfg__cat">' + esc(catName(p.category)) + '</p>' +
+                '<h1 class="cfg__title">' + esc(p.name) + '</h1>' +
+                '<p class="cfg__blurb">' + esc(p.blurb) + '</p>' +
+                '<div class="cfg__facts">' +
+                  '<div><dt>Grade</dt><dd>' + esc(p.grade.replace(/property class/i, "").trim()) + '</dd></div>' +
+                  '<div><dt>Range</dt><dd>' + esc(p.sizeRange) + '</dd></div>' +
+                '</div>' +
+              '</div>' +
             '</div>' +
-            '<div class="btns">' +
-              '<a class="btn btn--primary" href="' + enquireHref(p) + '">Enquire about this product</a>' +
-              '<a class="btn btn--ghost" href="' + telHref() + '">Call us</a>' +
+            '<div class="cfg__tabs">' +
+              '<button class="cfg__tab on" type="button" data-tab="build">Build enquiry</button>' +
+              '<button class="cfg__tab" type="button" data-tab="specs">Specifications</button>' +
+              '<button class="cfg__tab" type="button" data-tab="std">Standards</button>' +
             '</div>' +
-            '<dl class="specs">' + specs +
-              '<div><dt>Material</dt><dd>' + esc(p.material) + '</dd></div>' +
-              '<div><dt>Length range</dt><dd>' + esc(p.lengthRange) + '</dd></div>' +
-              '<div><dt>Finish</dt><dd>' + esc(p.finish) + '</dd></div>' +
-            '</dl>' +
-            priceBlock +
+            '<div class="cfg__panel on" data-panel="build">' +
+              '<p class="cfg__hint">Tap the sizes you need — they drop into your enquiry on the right.</p>' +
+              '<div class="cfg__sizes">' + sizeBtns + '</div>' +
+              '<p class="cfg__note">Other sizes, grades, materials and finishes made to order.</p>' +
+            '</div>' +
+            '<div class="cfg__panel" data-panel="specs">' +
+              '<dl class="specs">' + specs + '</dl>' +
+            '</div>' +
+            '<div class="cfg__panel" data-panel="std">' + stdRows + '</div>' +
           '</div>' +
+          '<aside class="cfg__rail">' +
+            '<h3 class="cfg__railh">Your enquiry</h3>' +
+            '<p class="cfg__railsub">Build a list and send it — we reply with an official quotation, stock &amp; delivery.</p>' +
+            '<div class="cfg__list" data-list><div class="cfg__empty">No sizes yet.<br>Tap sizes to add them here.</div></div>' +
+            '<p class="cfg__count" data-count><b>0</b> lines selected</p>' +
+            '<div class="cfg__rbtns">' +
+              '<a class="cfg__rbtn cfg__rbtn--wa" data-wa target="_blank" rel="noopener">' + svgWa + 'Send on WhatsApp</a>' +
+              '<a class="cfg__rbtn cfg__rbtn--mail" data-mail target="_blank" rel="noopener">' + svgMail + 'Email quotation</a>' +
+              '<a class="cfg__rbtn cfg__rbtn--call" href="' + telHref() + '">' + svgCall + 'Call ' + esc(SITE.phone) + '</a>' +
+            '</div>' +
+          '</aside>' +
         '</div>' +
       '</div></div>' + relatedBlock;
+
+    wireConfigurator(host, p);
+  }
+
+  /* ---- product configurator: tabs + enquiry builder + fixed message ----- */
+  function quoteMessage(p, sizes) {
+    var sizeLine = sizes.length ? sizes.join(", ") : "(please specify)";
+    return "Hello " + SITE.name + "," + "\r\n\r\n" +
+      "I would like to request an official quotation for the following:" + "\r\n\r\n" +
+      "Product: " + p.name + "\r\n" +
+      "Grade: " + p.grade + "\r\n" +
+      "Standard: " + p.standard + "\r\n" +
+      "Size(s): " + sizeLine + "\r\n" +
+      "Quantity: " + "\r\n\r\n" +
+      "Kindly share your best pricing, available stock and estimated delivery time." + "\r\n\r\n" +
+      "Thank you.";
+  }
+
+  function wireConfigurator(host, p) {
+    // tabs
+    host.querySelectorAll(".cfg__tab").forEach(function (t) {
+      t.addEventListener("click", function () {
+        host.querySelectorAll(".cfg__tab").forEach(function (x) { x.classList.remove("on"); });
+        host.querySelectorAll(".cfg__panel").forEach(function (x) { x.classList.remove("on"); });
+        t.classList.add("on");
+        host.querySelector('.cfg__panel[data-panel="' + t.getAttribute("data-tab") + '"]').classList.add("on");
+      });
+    });
+
+    var listEl = host.querySelector("[data-list]");
+    var countEl = host.querySelector("[data-count]");
+    var waEl = host.querySelector("[data-wa]");
+    var mailEl = host.querySelector("[data-mail]");
+    var chosen = []; // preserves order
+
+    function render() {
+      listEl.innerHTML = "";
+      if (!chosen.length) {
+        listEl.innerHTML = '<div class="cfg__empty">No sizes yet.<br>Tap sizes to add them here.</div>';
+      } else {
+        chosen.forEach(function (s) {
+          var row = document.createElement("div");
+          row.className = "cfg__item";
+          row.innerHTML = '<span class="cfg__itemname">' + esc(s) + '</span><span class="cfg__x" title="Remove">✕</span>';
+          row.querySelector(".cfg__x").addEventListener("click", function () {
+            chosen = chosen.filter(function (x) { return x !== s; });
+            render();
+          });
+          listEl.appendChild(row);
+        });
+      }
+      countEl.innerHTML = "<b>" + chosen.length + "</b> line" + (chosen.length === 1 ? "" : "s") + " selected";
+      host.querySelectorAll(".cfg__size").forEach(function (b) {
+        b.classList.toggle("on", chosen.indexOf(b.getAttribute("data-size")) !== -1);
+      });
+      var msg = quoteMessage(p, chosen);
+      waEl.href = "https://wa.me/" + SITE.whatsapp + "?text=" + encodeURIComponent(msg);
+      mailEl.href = "https://mail.google.com/mail/u/0/?tf=cm&to=" + encodeURIComponent(SITE.email) +
+        "&body=" + encodeURIComponent(msg);
+    }
+
+    host.querySelectorAll(".cfg__size").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var s = b.getAttribute("data-size");
+        if (chosen.indexOf(s) === -1) chosen.push(s);
+        else chosen = chosen.filter(function (x) { return x !== s; });
+        render();
+      });
+    });
+    render();
   }
 
   /* ---- generic mounts (used on home/about/contact) ---------------------- */
@@ -347,15 +440,185 @@
     var fg = document.querySelector("[data-featured-list]");
     if (fg) fg.innerHTML = PRODUCTS.filter(function (p) { return p.featured; }).map(productCard).join("");
     // contact links
-    document.querySelectorAll("[data-enquire]").forEach(function (el) { el.href = enquireHref(null); });
+    document.querySelectorAll("[data-enquire]").forEach(function (el) { el.href = enquireHref(null); el.target = "_blank"; el.rel = "noopener"; });
     document.querySelectorAll("[data-tel]").forEach(function (el) { el.href = telHref(); });
     document.querySelectorAll("[data-email]").forEach(function (el) {
-      el.href = "mailto:" + SITE.email; el.textContent = SITE.email;
+      el.href = enquireHref(null); el.target = "_blank"; el.rel = "noopener"; el.textContent = SITE.email;
     });
     document.querySelectorAll("[data-wa]").forEach(function (el) { el.href = waHref(null); });
     document.querySelectorAll("[data-site-address]").forEach(function (el) { el.textContent = SITE.address; });
     document.querySelectorAll("[data-site-hours]").forEach(function (el) { el.textContent = SITE.hours; });
     document.querySelectorAll("[data-site-phone]").forEach(function (el) { el.textContent = SITE.phone; });
+  }
+
+  /* ============================================================
+     Motion  ·  scroll reveal (02) + split headline (03) +
+     magnetic CTAs (04) + sticky scroll story (06).
+     Self-contained — no external dependencies. The homepage
+     (index.html) does not load site.js, so it stays untouched.
+     ============================================================ */
+  var REDUCE = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function initReveal() {
+    var els = document.querySelectorAll(".card, .ccard, .stat, .pill, .specs, .ptable");
+    els.forEach(function (el) { if (!el.hasAttribute("data-reveal")) el.setAttribute("data-reveal", ""); });
+    document.querySelectorAll("[data-reveal]").forEach(function (el) {
+      var sibs = [].slice.call(el.parentNode.querySelectorAll(":scope > [data-reveal]"));
+      var i = sibs.indexOf(el);
+      el.style.transitionDelay = (Math.max(0, i) * 0.08) + "s";
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    document.querySelectorAll("[data-reveal]").forEach(function (el) { io.observe(el); });
+  }
+
+  function splitEl(el) {
+    var out = "";
+    [].forEach.call(el.childNodes, function (node) {
+      if (node.nodeType === 3) {
+        node.textContent.split(/(\s+)/).forEach(function (tok) {
+          if (tok.trim() === "") { out += tok; return; }
+          out += '<span class="w"><i>' + tok + '</i></span>';
+        });
+      } else if (node.nodeName === "BR") {
+        out += "<br>";
+      } else {
+        var tag = node.tagName.toLowerCase();
+        node.textContent.split(/(\s+)/).forEach(function (tok) {
+          if (tok.trim() === "") { out += tok; return; }
+          out += '<span class="w"><i><' + tag + '>' + tok + '</' + tag + '></i></span>';
+        });
+      }
+    });
+    el.innerHTML = out;
+    el.querySelectorAll(".w > i").forEach(function (i, idx) { i.style.transitionDelay = (idx * 0.05) + "s"; });
+  }
+
+  function initSplit() {
+    var heads = document.querySelectorAll(".phead h1");
+    heads.forEach(splitEl);
+    // headers sit above the fold — play on load
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { heads.forEach(function (el) { el.classList.add("in"); }); });
+    });
+  }
+
+  function initMagnetic() {
+    if (REDUCE || !window.matchMedia("(pointer:fine)").matches) return;
+    document.querySelectorAll(".btn--primary, .nav__cta").forEach(function (btn) {
+      btn.addEventListener("mousemove", function (e) {
+        var r = btn.getBoundingClientRect();
+        var x = e.clientX - (r.left + r.width / 2);
+        var y = e.clientY - (r.top + r.height / 2);
+        btn.style.transform = "translate(" + (x * 0.3).toFixed(1) + "px," + (y * 0.45).toFixed(1) + "px)";
+      });
+      btn.addEventListener("mouseleave", function () { btn.style.transform = ""; });
+    });
+  }
+
+  function initScrollStory() {
+    var prog = document.getElementById("prog");
+    if (!prog) return;
+    var bolt = document.getElementById("progBolt");
+    var bar = document.getElementById("progBar");
+    var titleEl = document.getElementById("progTitle");
+    var bodyEl = document.getElementById("progBody");
+    var dots = prog.querySelectorAll(".prog__dots b");
+    var steps;
+    try { steps = JSON.parse(prog.getAttribute("data-steps")); } catch (e) { steps = null; }
+    if (!steps || !steps.length) return;
+    var cur = -1, ticking = false;
+    function upd() {
+      var r = prog.getBoundingClientRect();
+      var total = prog.offsetHeight - window.innerHeight;
+      var p = Math.min(1, Math.max(0, -r.top / (total || 1)));
+      if (bar) bar.style.width = (p * 100) + "%";
+      if (bolt && !REDUCE) bolt.style.transform = "rotate(" + (p * 220).toFixed(1) + "deg)";
+      var idx = Math.min(steps.length - 1, Math.floor(p * steps.length));
+      if (idx !== cur) {
+        cur = idx;
+        if (titleEl) titleEl.textContent = steps[idx].t;
+        if (bodyEl) bodyEl.textContent = steps[idx].b;
+        dots.forEach(function (d, i) { d.classList.toggle("on", i === idx); });
+      }
+    }
+    window.addEventListener("scroll", function () {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () { upd(); ticking = false; });
+    }, { passive: true });
+    window.addEventListener("resize", upd);
+    upd();
+  }
+
+  /* ---- parallax + inertia (StringTune-style, attribute driven) ----------
+     Native scroll, refined by a smoothing (lerp) formula. Elements drift
+     at different speeds as they cross the viewport, giving layered depth.
+
+       data-parallax="0.14"          vertical speed factor
+       data-parallax-x="0.1"         optional horizontal drift
+       data-parallax-mode="scroll"   lag the whole scroll (use for hero
+                                     bands that scroll away); default is
+                                     "center" — 0 offset when centred, so
+                                     nothing looks displaced on load.
+     A global intensity scales every speed. Images are auto-hooked so the
+     part drifts within its frame. Respects prefers-reduced-motion.
+     --------------------------------------------------------------------- */
+  var PARALLAX_INTENSITY = 1.0; // 1.0 == "moderate" (intensity 5 of 10)
+
+  function initParallax() {
+    if (REDUCE) return;
+    var items = [];
+    function add(el, sy, sx, mode) {
+      el.style.willChange = "transform";
+      el.style.backfaceVisibility = "hidden";
+      items.push({ el: el, sy: sy, sx: sx || 0, mode: mode || "center", cy: 0, cx: 0 });
+    }
+    // explicit hooks
+    document.querySelectorAll("[data-parallax]").forEach(function (el) {
+      var sy = parseFloat(el.getAttribute("data-parallax"));
+      if (isNaN(sy)) sy = 0.12;
+      var sx = parseFloat(el.getAttribute("data-parallax-x"));
+      add(el, sy, isNaN(sx) ? 0 : sx, el.getAttribute("data-parallax-mode"));
+    });
+    // auto: transparent product art drifts within its dark frame
+    document.querySelectorAll(".card__img img, .pd__media img").forEach(function (img) {
+      add(img, 0.075, 0, "center");
+    });
+    if (!items.length) return;
+
+    var run = true;
+    function frame() {
+      if (!run) return;
+      var vh = window.innerHeight, vw = window.innerWidth;
+      var sc = window.pageYOffset;
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i], r = it.el.getBoundingClientRect();
+        var far = r.bottom < -240 || r.top > vh + 240;
+        var ty, tx = 0;
+        if (it.mode === "scroll") {
+          ty = sc * it.sy * PARALLAX_INTENSITY;
+          tx = sc * it.sx * PARALLAX_INTENSITY;
+        } else {
+          var d = (r.top + r.height / 2) - vh / 2;
+          ty = -d * it.sy * PARALLAX_INTENSITY;
+          tx = -d * it.sx * PARALLAX_INTENSITY;
+        }
+        if (far) { it.cy = ty; it.cx = tx; } // snap while off-screen — no lag catch-up
+        else { it.cy += (ty - it.cy) * 0.1; it.cx += (tx - it.cx) * 0.1; }
+        it.el.style.transform = "translate3d(" + it.cx.toFixed(2) + "px," + it.cy.toFixed(2) + "px,0)";
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+    window.addEventListener("pagehide", function () { run = false; });
+  }
+
+  function initMotion() {
+    document.body.classList.add("motion-ready");
+    if (!REDUCE) { initReveal(); initSplit(); initParallax(); }
+    initMagnetic();
+    initScrollStory();
   }
 
   /* ---- boot ------------------------------------------------------------- */
@@ -366,5 +629,6 @@
     initProductsPage();
     initCategoryPage();
     initProductPage();
+    initMotion();
   });
 })();
