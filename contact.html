@@ -6,40 +6,126 @@
 <title>Contact — New Bharat Trading Company</title>
 <meta name="description" content="Contact New Bharat Trading Company for a fastener quotation — email, call or WhatsApp. Nagdevi, Mumbai.">
 <link rel="stylesheet" href="site.css">
+<style>
+  .csec{position:relative;background:linear-gradient(160deg,#0d1fb8 0%,#0912a0 100%);color:#fff;padding:76px 0 96px;overflow:hidden;}
+  .csec::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 82% 0%,rgba(120,150,255,.25),transparent 60%);pointer-events:none;}
+  .csec .wrap{position:relative;z-index:1;}
+  .csec__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start;}
+  @media(max-width:860px){.csec__grid{grid-template-columns:1fr;gap:40px;}}
+  .csec__eyebrow{margin:0 0 14px;font-weight:700;font-size:11px;letter-spacing:4px;color:#ff5a63;}
+  .csec__h{margin:0 0 18px;font-weight:600;font-size:clamp(28px,4vw,42px);letter-spacing:-1px;line-height:1.05;}
+  .csec__intro{margin:0 0 30px;font-size:15px;line-height:1.7;color:rgba(255,255,255,.82);max-width:380px;}
+  .csec__socials{display:flex;gap:14px;margin:0 0 40px;}
+  .csoc{width:54px;height:54px;border-radius:50%;background:#e30613;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:transform .2s,background .2s;}
+  .csoc:hover{background:#c40512;transform:translateY(-3px);}
+  .csec__meta{display:flex;flex-direction:column;gap:20px;}
+  .csec__meta > div span{display:block;font-weight:600;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,.6);margin:0 0 5px;}
+  .csec__meta > div p{margin:0;font-size:14px;line-height:1.55;color:#fff;font-weight:500;max-width:320px;}
+
+  .cform{display:grid;gap:22px;}
+  .cform__row{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  @media(max-width:560px){.cform__row{grid-template-columns:1fr;}}
+  .cform label{display:flex;flex-direction:column;gap:9px;font-weight:600;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.9);}
+  .cform input,.cform select,.cform textarea{
+    width:100%;font-family:inherit;font-size:14.5px;color:#fff;background:rgba(255,255,255,.06);
+    border:1.5px solid rgba(255,255,255,.5);border-radius:10px;padding:14px 16px;outline:none;
+    transition:border-color .2s,background .2s,box-shadow .2s;
+  }
+  .cform textarea{min-height:150px;resize:vertical;}
+  .cform input::placeholder,.cform textarea::placeholder{color:rgba(255,255,255,.55);letter-spacing:0;text-transform:none;font-weight:400;}
+  .cform input:focus,.cform select:focus,.cform textarea:focus{border-color:#fff;background:rgba(255,255,255,.12);box-shadow:0 0 0 3px rgba(255,255,255,.12);}
+  .cform select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding-right:40px;}
+  .cform select option{color:#0e1a66;}
+  .cform__submit{justify-self:start;margin-top:4px;font-family:inherit;font-weight:600;font-size:13px;letter-spacing:1.5px;
+    color:#fff;background:#e30613;border:0;padding:16px 44px;border-radius:8px;cursor:pointer;transition:transform .15s,background .2s;box-shadow:0 12px 30px -12px rgba(227,6,19,.6);}
+  .cform__submit:hover{background:#c40512;transform:translateY(-2px);}
+  .cform__ok{margin:14px 0 0;font-size:13.5px;color:#bfe6c8;font-weight:600;display:none;}
+</style>
 </head>
 <body data-active="contact">
 <div data-nav-mount></div>
 
-<header class="phead">
-  <div class="wrap">
-    <p class="phead__eyebrow">GET IN TOUCH</p>
-    <h1>Tell us what you need.<br>We'll send a quote.</h1>
-    <p>Share the standard, grade, size and quantity — or just describe the application — and we'll confirm availability and pricing.</p>
-  </div>
-</header>
-
-<section class="section"><div class="wrap contact-grid">
-  <div>
-    <h2 style="margin:0 0 14px;font-weight:600;font-size:clamp(22px,3vw,30px);letter-spacing:-.5px;">Request a quotation</h2>
-    <p class="note" style="font-size:14.5px;line-height:1.7;max-width:460px;">The fastest way to reach us is email or WhatsApp with your fastener list. Mention DIN/ISO/IS standard, property class, size and quantity for a same-day response during business hours.</p>
-    <div class="btns" style="margin-top:24px;">
-      <a class="btn btn--primary" data-enquire href="#">Email an enquiry</a>
-      <a class="btn btn--ghost" data-tel href="#">Call us</a>
-      <a class="btn btn--ghost" data-wa href="#" target="_blank" rel="noopener">WhatsApp</a>
+<section class="csec">
+  <div class="wrap csec__grid">
+    <div class="csec__left">
+      <p class="csec__eyebrow">GET IN TOUCH</p>
+      <h1 class="csec__h">Contact us</h1>
+      <p class="csec__intro">Partner with us for precision, quality and reliability. Reach out and let's start building together.</p>
+      <div class="csec__socials">
+        <a class="csoc" data-wa href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.42 1.32-1.95 1.36-.5.05-.5.4-3.15-.66-2.66-1.06-4.3-3.79-4.43-3.97-.13-.18-1.05-1.4-1.05-2.67 0-1.27.67-1.9.9-2.16.24-.26.52-.32.7-.32.17 0 .35 0 .5.01.16.01.38-.06.59.45.24.58.8 2 .87 2.14.07.14.12.31.02.5-.09.18-.14.29-.28.45-.14.16-.29.35-.42.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.86.27.13.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
+        </a>
+        <a class="csoc" data-tel href="#" aria-label="Call">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+        </a>
+        <a class="csoc" href="https://mail.google.com/mail/u/0/?tf=cm&amp;to=nbtcoindia@gmail.com" target="_blank" rel="noopener" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2.24V18h16V6.24l-8 5.99-8-5.99zM19.6 6H4.4l7.6 5.7L19.6 6z"/></svg>
+        </a>
+      </div>
+      <div class="csec__meta">
+        <div><span>ADDRESS</span><p data-site-address></p></div>
+        <div><span>HOURS</span><p data-site-hours></p></div>
+      </div>
     </div>
-  </div>
 
-  <div class="cbox">
-    <div><h3>Address</h3><p data-site-address></p></div>
-    <div><h3>Email</h3><a data-email href="#"></a></div>
-    <div><h3>Phone</h3><p data-site-phone></p></div>
-    <div><h3>Hours</h3><p data-site-hours></p></div>
+    <form class="cform" data-cform novalidate>
+      <div class="cform__row">
+        <label>Your Name<input name="name" placeholder="Your Name" required></label>
+        <label>Company Name<input name="company" placeholder="Company Name"></label>
+      </div>
+      <div class="cform__row">
+        <label>Your Designation<input name="designation" placeholder="Position"></label>
+        <label>Convenient Time To Reach You
+          <select name="slot">
+            <option value="">Select Your Slot</option>
+            <option>9:30 AM – 12:00 PM</option>
+            <option>12:00 PM – 3:00 PM</option>
+            <option>3:00 PM – 6:00 PM</option>
+          </select>
+        </label>
+      </div>
+      <div class="cform__row">
+        <label>Phone Number<input name="phone" placeholder="Your Number"></label>
+        <label>Email Address<input name="email" type="email" placeholder="Email ID"></label>
+      </div>
+      <label>Drop Your Message Below<textarea name="message" placeholder="Your Message"></textarea></label>
+      <button type="submit" class="cform__submit">SUBMIT</button>
+      <p class="cform__ok" data-ok>Opening your email with the details filled in…</p>
+    </form>
   </div>
-</div></section>
+</section>
 
 <div data-footer-mount></div>
 
 <script src="catalog.js"></script>
 <script src="site.js"></script>
+<script>
+  (function () {
+    var form = document.querySelector("[data-cform]");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var f = form.elements;
+      var to = (window.SITE && SITE.email) || "nbtcoindia@gmail.com";
+      var lines = [
+        "Name: " + (f.name.value || "—"),
+        "Company: " + (f.company.value || "—"),
+        "Designation: " + (f.designation.value || "—"),
+        "Preferred time: " + (f.slot.value || "—"),
+        "Phone: " + (f.phone.value || "—"),
+        "Email: " + (f.email.value || "—"),
+        "",
+        "Message:",
+        (f.message.value || "—")
+      ];
+      var url = "https://mail.google.com/mail/u/0/?tf=cm&to=" + encodeURIComponent(to) +
+        "&su=" + encodeURIComponent("Enquiry from " + (f.name.value || "website")) +
+        "&body=" + encodeURIComponent(lines.join("\r\n"));
+      var ok = form.querySelector("[data-ok]");
+      if (ok) ok.style.display = "block";
+      window.open(url, "_blank", "noopener");
+    });
+  })();
+</script>
 </body>
 </html>

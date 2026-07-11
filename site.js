@@ -95,7 +95,7 @@
       return '<li><a href="category.html?cat=' + encodeURIComponent(c.slug) + '">' + esc(c.name) + '</a></li>';
     }).join("");
     return '' +
-      '<footer class="foot"><div class="wrap">' +
+      '<footer class="foot"><div class="foot__wm" aria-hidden="true">' + esc(SITE.short.toUpperCase()) + '</div><div class="wrap">' +
         '<div class="foot__cols">' +
           '<div>' +
             '<div class="foot__brand2"><span class="nav__dot"></span><span>' +
