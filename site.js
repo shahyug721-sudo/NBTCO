@@ -54,38 +54,43 @@
   /* ---- chrome: utility bar + nav + footer ------------------------------- */
   function buildUtilBar() {
     return '' +
-      '<div class="ubar"><div class="wrap">' +
-        '<div class="ubar__left">' +
-          '<a href="' + telHref() + '">' + IC.phone + esc(SITE.phone) + '</a>' +
-          '<a class="ubar__email" href="mailto:' + SITE.email + '">' + IC.mail + esc(SITE.email) + '</a>' +
-          '<span class="ubar__hours">' + IC.clock + esc(SITE.hours) + '</span>' +
-        '</div>' +
-        '<span class="ubar__badge">' + IC.star + 'Authorised Unbrako Stockist</span>' +
-      '</div></div>';
+      '<div data-navtop style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;padding:8px 32px;background:linear-gradient(90deg,#0a1aa8,#0f24c8 55%,#0a1aa8);">' +
+        '<span style="justify-self:start;font:600 10.5px/1 Jost;letter-spacing:2px;color:#aeb9ee;">NAGDEVI · MUMBAI</span>' +
+        '<span style="justify-self:center;font:600 11px/1 Jost;letter-spacing:2.4px;color:#e3e8fb;white-space:nowrap;"><span style="color:#ff5a63;">EST. ' + esc(SITE.estd) + '</span> · STAINLESS &amp; HIGH-TENSILE FASTENERS</span>' +
+        '<a href="mailto:' + esc(SITE.email) + '" style="justify-self:end;font:600 11px/1 Jost;letter-spacing:1.4px;color:#e3e8fb;text-decoration:none;">' + esc(SITE.email.toUpperCase()) + '</a>' +
+      '</div>';
   }
 
   /* ---- chrome: nav + footer --------------------------------------------- */
   function buildNav(active) {
     var links = [
+      { href: "index.html", label: "Home", key: "home" },
       { href: "products.html", label: "Products", key: "products" },
-      { href: "products.html#categories", label: "Range", key: "range" },
-      { href: "about.html", label: "About", key: "about" },
-      { href: "contact.html", label: "Contact", key: "contact" },
+      { href: "about.html", label: "About Us", key: "about" },
+      { href: "contact.html", label: "Contact Us", key: "contact" },
     ];
+    var act = ({ range: "products" })[active] || active;
     var items = links.map(function (l) {
-      var on = l.key === active ? " is-active" : "";
-      return '<a class="nav__link' + on + '" href="' + l.href + '">' + l.label + "</a>";
+      var col = l.key === act ? "#e30613" : "#0e1a66";
+      return '<a data-navlink href="' + l.href + '" style="font:600 12px/1 Jost;letter-spacing:1.8px;text-transform:uppercase;color:' + col + ';text-decoration:none;transition:color .2s;">' + l.label + '</a>';
     }).join("");
-
+    var circle = 'width:38px;height:38px;border-radius:50%;background:#e30613;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:background .2s,transform .2s;';
+    var svgWa = '<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>';
+    var svgCall = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>';
+    var svgMail = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2.24V18h16V6.24l-8 5.99-8-5.99z"/></svg>';
     return '' +
-      '<nav class="nav">' +
-        '<a class="nav__brand" href="index.html">' +
-          '<span class="nav__dot"></span>' +
-          '<span class="nav__name">' + esc(SITE.short.toUpperCase()) + '</span>' +
-        '</a>' +
-        '<button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>' +
-        '<div class="nav__links">' + items +
-          '<a class="nav__cta" href="' + enquireHref(null) + '" target="_blank" rel="noopener">GET A QUOTE</a>' +
+      '<nav style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.08);">' +
+        '<div data-navmain style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;padding:15px 32px;max-width:1400px;margin:0 auto;">' +
+          '<a href="index.html" style="justify-self:start;display:flex;align-items:center;gap:10px;text-decoration:none;">' +
+            '<span style="width:9px;height:9px;border-radius:50%;background:#e30613;box-shadow:0 0 12px #e30613;"></span>' +
+            '<span style="font:600 13px/1 Jost;letter-spacing:2.5px;color:#0e1a66;">' + esc(SITE.short.toUpperCase()) + '</span>' +
+          '</a>' +
+          '<div style="justify-self:center;display:flex;align-items:center;gap:32px;">' + items + '</div>' +
+          '<div style="justify-self:end;display:flex;align-items:center;gap:10px;">' +
+            '<a href="' + waHref(null) + '" target="_blank" rel="noopener" aria-label="WhatsApp" style="' + circle + '">' + svgWa + '</a>' +
+            '<a href="' + telHref() + '" aria-label="Call" style="' + circle + '">' + svgCall + '</a>' +
+            '<a href="' + enquireHref(null) + '" target="_blank" rel="noopener" aria-label="Email" style="' + circle + '">' + svgMail + '</a>' +
+          '</div>' +
         '</div>' +
       '</nav>';
   }
