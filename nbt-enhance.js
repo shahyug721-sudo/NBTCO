@@ -36,6 +36,7 @@
     started = true;
     try { preloader(); } catch (e) {}
     try { scrollThread(); } catch (e) {}
+    try { hamburger(); } catch (e) {}
     try { buildFinder(); } catch (e) {}
     // Give the React runtime a moment to hydrate before touching its nodes.
     setTimeout(function () {
@@ -106,6 +107,63 @@
     target.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     update();
+  }
+
+  /* ---- 2c. mobile hamburger menu (both nav variants) --------------------
+     The homepage nav is React-managed, so anything injected INTO it gets
+     reverted. Keep the button + panel on <body> (outside the React tree) and
+     hide the in-nav links via CSS :has(). We only READ the nav for its links. */
+  function hamburger() {
+    var navmain = document.querySelector("[data-navmain]");
+    if (!navmain) return;
+    var linkEls = navmain.querySelectorAll("[data-navlink]");
+    if (!linkEls.length) return;
+
+    var btn = el("button", { id: "nbt-burger", type: "button", "aria-label": "Open menu", "aria-expanded": "false" });
+    btn.innerHTML = "<span></span><span></span><span></span>";
+    document.body.appendChild(btn);
+
+    var linksHtml = "";
+    Array.prototype.forEach.call(linkEls, function (a) {
+      linksHtml += '<a href="' + a.getAttribute("href") + '">' + a.textContent.trim() + "</a>";
+    });
+    var contactHtml = "";
+    Array.prototype.forEach.call(navmain.querySelectorAll("a[aria-label]"), function (a) {
+      var tgt = a.getAttribute("target") ? ' target="_blank" rel="noopener"' : "";
+      contactHtml += '<a href="' + a.getAttribute("href") + '"' + tgt + ">" + (a.getAttribute("aria-label") || "Contact") + "</a>";
+    });
+    var panel = el("div", { id: "nbt-menu", "aria-hidden": "true" });
+    panel.innerHTML = '<div class="nbt-menu-links">' + linksHtml + "</div>" +
+      (contactHtml ? '<div class="nbt-menu-contact">' + contactHtml + "</div>" : "");
+    document.body.appendChild(panel);
+
+    var open = false;
+    function apply() {
+      document.body.classList.toggle("nbt-menu-open", open);
+      btn.classList.toggle("is-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      panel.setAttribute("aria-hidden", open ? "false" : "true");
+      var nav = document.querySelector("nav");
+      if (nav) panel.style.top = Math.round(nav.getBoundingClientRect().bottom) + "px";
+    }
+    function set(v) { open = v; apply(); }
+    function placeBurger() {
+      var nm = document.querySelector("[data-navmain]");
+      if (!nm) return;
+      var r = nm.getBoundingClientRect();
+      if (r.height > 0 && r.height < 200) btn.style.top = Math.round(r.top + r.height / 2 - 22) + "px";
+    }
+    btn.addEventListener("click", function (e) { e.stopPropagation(); set(!open); });
+    panel.addEventListener("click", function (e) { if (e.target.tagName === "A") set(false); });
+    document.addEventListener("click", function (e) {
+      if (open && !panel.contains(e.target) && e.target !== btn && !btn.contains(e.target)) set(false);
+    });
+    document.addEventListener("keydown", function (e) { if (open && e.key === "Escape") set(false); });
+    window.addEventListener("resize", function () { if (open && window.innerWidth > 860) set(false); placeBurger(); });
+    placeBurger();
+    window.addEventListener("load", placeBurger);
+    setTimeout(placeBurger, 700);
   }
 
   /* ---- 3. count-up stats ------------------------------------------------ */
