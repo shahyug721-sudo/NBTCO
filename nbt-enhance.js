@@ -38,6 +38,7 @@
     try { scrollThread(); } catch (e) {}
     try { hamburger(); } catch (e) {}
     try { buildFinder(); } catch (e) {}
+    try { scheduleIndustries(); } catch (e) {}
     // Give the React runtime a moment to hydrate before touching its nodes.
     setTimeout(function () {
       try { countUp(); } catch (e) {}
@@ -166,6 +167,44 @@
     setTimeout(placeBurger, 700);
   }
 
+  /* ---- 2d. clean stacked "Industries" grid for phones ------------------
+     The desktop 3D carousel reads as cramped, angled, cut-off cards on a
+     phone. Build a simple 2-col card grid from the same data; CSS hides the
+     3D stage and shows this grid below 860px. (Injection here survives the
+     React runtime — verified — unlike the nav.) */
+  function mobileIndustries() {
+    var sec = document.querySelector('section[data-screen-label="Industries"]');
+    if (!sec) return;
+    var cards = sec.querySelectorAll("[data-gcard]");
+    if (!cards.length || sec.querySelector("#nbt-industries")) return;
+    var html = "";
+    Array.prototype.forEach.call(cards, function (c) {
+      var img = c.querySelector("img"), h = c.querySelector("h3"), p = c.querySelector("p");
+      if (!img) return;
+      var title = h ? h.textContent.trim() : "";
+      html += '<div class="nbt-ind-card"><img src="' + img.getAttribute("src") + '" alt="' + title + '">' +
+        '<div class="nbt-ind-cap"><h3>' + title + "</h3><p>" + (p ? p.textContent.trim() : "") + "</p></div></div>";
+    });
+    var grid = el("div", { id: "nbt-industries" });
+    grid.innerHTML = html;
+    var stage = sec.querySelector("[data-gallery-stage]");
+    if (stage && stage.parentNode) stage.parentNode.insertBefore(grid, stage.nextSibling);
+    else sec.appendChild(grid);
+    document.body.classList.add("nbt-ind-ready");   // gates the CSS swap
+  }
+  // Hydration replaces section DOM after load, so inject post-load and
+  // re-inject if React strips it (self-healing, capped).
+  function scheduleIndustries() {
+    var tries = 0;
+    function attempt() {
+      tries++;
+      try { mobileIndustries(); } catch (e) {}
+      if (!document.getElementById("nbt-industries") && tries < 8) setTimeout(attempt, 500);
+    }
+    if (document.readyState === "complete") setTimeout(attempt, 300);
+    else window.addEventListener("load", function () { setTimeout(attempt, 300); });
+  }
+
   /* ---- 3. count-up stats ------------------------------------------------ */
   function countUp() {
     var about = document.getElementById("about");
@@ -258,7 +297,7 @@
   function buildFinder() {
     // Launcher
     var launch = el("button", { id: "nbt-launch", type: "button", "aria-label": "Get a fastener quote on WhatsApp" });
-    launch.innerHTML = '<span class="nbt-launch-pulse"></span>' + WA_ICON + '<span>Get a Quote</span>';
+    launch.innerHTML = WA_ICON + '<span>Get a Quote</span>';
     document.body.appendChild(launch);
 
     // Inner pages inject their own WhatsApp FAB stack (bottom-right) via site.js.

@@ -77,7 +77,7 @@
       '<nav style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.08);">' +
         '<div data-navmain style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;padding:15px 32px;max-width:1400px;margin:0 auto;">' +
           '<a href="index.html" style="justify-self:start;display:flex;align-items:center;gap:10px;text-decoration:none;">' +
-            '<img src="assets/logo-mark.svg" alt="New Bharat Trading Co." style="width:32px;height:32px;display:block;">' +
+            '<svg viewBox="0 0 64 64" width="32" height="32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block"><defs><linearGradient id="nbtHexNav" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16299c"/><stop offset="1" stop-color="#0a1352"/></linearGradient></defs><polygon points="61,32 46.5,6.89 17.5,6.89 3,32 17.5,57.11 46.5,57.11" fill="url(#nbtHexNav)" stroke="#081048" stroke-width="0.8" stroke-linejoin="round"/><polygon points="46.5,6.89 17.5,6.89 3,32 61,32" fill="#ffffff" opacity="0.06"/><polygon points="55.5,32 43.75,11.65 20.25,11.65 8.5,32 20.25,52.35 43.75,52.35" fill="none" stroke="#e30613" stroke-width="2.2" stroke-linejoin="round"/><text x="32" y="43.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="33" fill="#ffffff">N</text></svg>' +
             '<span style="font:600 13px/1 Jost;letter-spacing:2.5px;color:#0e1a66;">' + esc(SITE.short.toUpperCase()) + '</span>' +
           '</a>' +
           '<div style="justify-self:center;display:flex;align-items:center;gap:32px;">' + items + '</div>' +
@@ -98,7 +98,7 @@
       '<footer class="foot"><div class="foot__wm" aria-hidden="true">' + esc(SITE.short.toUpperCase()) + '</div><div class="wrap">' +
         '<div class="foot__cols">' +
           '<div>' +
-            '<div class="foot__brand2"><span style="display:inline-flex;width:26px;height:26px;"><img src="assets/logo-mark-light.svg" alt="New Bharat Trading Co." style="width:26px;height:26px;display:block;"></span><span>' +
+            '<div class="foot__brand2"><span style="display:inline-flex;width:26px;height:26px;"><svg viewBox="0 0 64 64" width="26" height="26" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block"><polygon points="61,32 46.5,6.89 17.5,6.89 3,32 17.5,57.11 46.5,57.11" fill="#ffffff"/><polygon points="55.5,32 43.75,11.65 20.25,11.65 8.5,32 20.25,52.35 43.75,52.35" fill="none" stroke="#e30613" stroke-width="2.2" stroke-linejoin="round"/><text x="32" y="43.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="33" fill="#0d1a6b">N</text></svg></span><span>' +
               esc(SITE.short.toUpperCase()) + '</span></div>' +
             '<p>' + esc(SITE.tagline) + '</p>' +
             '<p>' + esc(SITE.address) + '</p>' +
