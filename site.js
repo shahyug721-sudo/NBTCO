@@ -46,11 +46,6 @@
     arrow: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>',
   };
 
-  function backBtn(href, variant) {
-    return '<a class="backbtn backbtn--' + variant + '" href="' + href + '" data-back>' +
-      IC.arrow + 'Back</a>';
-  }
-
   /* ---- chrome: utility bar + nav + footer ------------------------------- */
   function buildUtilBar() {
     return '' +
@@ -82,7 +77,7 @@
       '<nav style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.08);">' +
         '<div data-navmain style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;padding:15px 32px;max-width:1400px;margin:0 auto;">' +
           '<a href="index.html" style="justify-self:start;display:flex;align-items:center;gap:10px;text-decoration:none;">' +
-            '<span style="width:9px;height:9px;border-radius:50%;background:#e30613;box-shadow:0 0 12px #e30613;"></span>' +
+            '<img src="assets/logo-mark.svg" alt="New Bharat Trading Co." style="width:32px;height:32px;display:block;">' +
             '<span style="font:600 13px/1 Jost;letter-spacing:2.5px;color:#0e1a66;">' + esc(SITE.short.toUpperCase()) + '</span>' +
           '</a>' +
           '<div style="justify-self:center;display:flex;align-items:center;gap:32px;">' + items + '</div>' +
@@ -103,7 +98,7 @@
       '<footer class="foot"><div class="foot__wm" aria-hidden="true">' + esc(SITE.short.toUpperCase()) + '</div><div class="wrap">' +
         '<div class="foot__cols">' +
           '<div>' +
-            '<div class="foot__brand2"><span class="nav__dot"></span><span>' +
+            '<div class="foot__brand2"><span style="display:inline-flex;width:26px;height:26px;"><img src="assets/logo-mark-light.svg" alt="New Bharat Trading Co." style="width:26px;height:26px;display:block;"></span><span>' +
               esc(SITE.short.toUpperCase()) + '</span></div>' +
             '<p>' + esc(SITE.tagline) + '</p>' +
             '<p>' + esc(SITE.address) + '</p>' +
@@ -150,12 +145,7 @@
     var menu = document.querySelector(".nav__links");
     if (burger && menu) burger.addEventListener("click", function () { menu.classList.toggle("is-open"); });
 
-    // back button on the page-header band (product page injects its own)
-    var ph = document.querySelector(".phead .wrap");
-    if (ph) {
-      var fallback = active === "range" ? "products.html" : "index.html";
-      ph.insertAdjacentHTML("afterbegin", backBtn(fallback, "dark"));
-    }
+    // (back button is now rendered site-wide by nbt-enhance.js, below the nav)
 
     // floating action buttons
     document.body.insertAdjacentHTML("beforeend", buildFabs());
@@ -276,7 +266,6 @@
     var p = PRODUCTS.find(function (x) { return x.slug === slug; });
     if (!p) {
       host.innerHTML = '<div class="wrap" style="padding:80px 28px;text-align:center;">' +
-        backBtn("products.html", "light") +
         '<h1 style="font-weight:600;">Product not found</h1>' +
         '<p class="note"><a href="products.html">← Back to all products</a></p></div>';
       return;
@@ -320,7 +309,6 @@
 
     host.innerHTML = '' +
       '<div class="pd"><div class="wrap">' +
-        backBtn("category.html?cat=" + p.category, "light") +
         '<p class="crumb"><a href="products.html">Products</a> &nbsp;/&nbsp; ' +
           '<a href="category.html?cat=' + p.category + '">' + esc(catName(p.category)) + '</a> &nbsp;/&nbsp; ' +
           esc(p.name) + '</p>' +
