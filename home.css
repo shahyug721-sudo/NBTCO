@@ -1,0 +1,130 @@
+/* =========================================================================
+   New Bharat Trading Company — homepage styles
+   Uses the shared design system from site.css (:root variables).
+   ========================================================================= */
+
+/* ---- Hero ------------------------------------------------------------- */
+.hero{
+  position:relative;overflow:hidden;text-align:center;
+  padding:100px 0 88px;
+  background:radial-gradient(120% 80% at 50% 0%,#ffffff 0%,#eef2fb 58%,#e4eaf7 100%);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(rgba(12,20,70,.05) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(12,20,70,.05) 1px,transparent 1px);
+  background-size:74px 74px;
+  -webkit-mask-image:radial-gradient(120% 95% at 50% 18%,#000,transparent 82%);
+          mask-image:radial-gradient(120% 95% at 50% 18%,#000,transparent 82%);
+}
+.hero .wrap{position:relative;z-index:2;}
+.hero__eyebrow{margin:0 0 16px;font-weight:700;font-size:11px;letter-spacing:4.5px;color:var(--orange);}
+.hero h1{
+  margin:0 auto;max-width:780px;color:var(--ink);
+  font-weight:600;font-size:clamp(30px,5.2vw,56px);line-height:1.06;letter-spacing:-1.4px;
+}
+.hero__sub{margin:22px auto 0;max-width:640px;font-size:15.5px;line-height:1.72;color:var(--ink-2);}
+.hero .btns{justify-content:center;margin:34px 0 0;}
+.hero .btn{padding:16px 30px;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;border-radius:8px;}
+
+/* ---- floating nuts & bolts -------------------------------------------- */
+.hero__bolts{position:absolute;inset:0;z-index:1;pointer-events:none;}
+.hero__bolts img{
+  position:absolute;width:var(--s,72px);height:var(--s,72px);object-fit:contain;opacity:.92;
+  filter:drop-shadow(0 14px 20px rgba(12,20,70,.3));
+  animation:nbtFloat var(--d,15s) ease-in-out var(--delay,0s) infinite;
+  will-change:transform;
+}
+@keyframes nbtFloat{
+  0%,100%{transform:translate3d(0,0,0) rotate(var(--r,0deg));}
+  50%{transform:translate3d(var(--dx,16px),var(--dy,-24px),0) rotate(calc(var(--r,0deg) + 24deg));}
+}
+
+/* ---- 3D hero bolt (desktop only; revealed by bolt3d.js) ---------------- */
+.hero__3d{
+  display:none;position:relative;z-index:2;
+  width:100%;max-width:560px;height:380px;margin:30px auto -18px;
+}
+.hero__3d.is-on{display:block;}
+.hero__3d canvas{display:block;width:100%;height:100%;}
+@media (max-width:900px){
+  .hero__3d,.hero__3d.is-on{display:none!important;}   /* phones stay fast */
+}
+
+/* ---- Stats (equal columns regardless of label length) ------------------ */
+.stats{grid-template-columns:repeat(4,minmax(0,1fr));}
+
+/* ---- Standards band ---------------------------------------------------- */
+.band{background:var(--panel);color:#fff;padding:30px 0;}
+.band .wrap{display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;}
+.band__t{margin:0;font-weight:600;font-size:clamp(17px,2.2vw,23px);letter-spacing:-.2px;}
+.band__stds{display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  font-weight:600;font-size:12px;letter-spacing:2.4px;color:rgba(255,255,255,.72);}
+.band__stds i{font-style:normal;color:var(--orange);}
+
+/* ---- Section heading --------------------------------------------------- */
+.sechead{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin:0 0 36px;}
+.sechead h2{margin:8px 0 0;font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.08;letter-spacing:-1px;color:var(--ink);}
+.sechead__link{font-weight:700;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;color:var(--rust);text-decoration:none;}
+.sechead__link:hover{text-decoration:underline;}
+
+/* ---- Industries grid --------------------------------------------------- */
+.indgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.indcard{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:3/4;
+  background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);}
+.indcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.indcard span{position:absolute;left:0;right:0;bottom:0;padding:12px 12px 13px;color:#fff;
+  font-weight:600;font-size:12.5px;line-height:1.28;
+  background:linear-gradient(180deg,transparent,rgba(9,15,64,.92));}
+
+/* ---- Why us ------------------------------------------------------------ */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.whycard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:var(--shadow);}
+.whycard i{display:flex;width:38px;height:38px;border-radius:10px;align-items:center;justify-content:center;
+  background:rgba(227,6,19,.12);color:var(--rust);font-style:normal;font-weight:700;font-size:16px;}
+.whycard h3{margin:15px 0 7px;font-weight:600;font-size:16px;color:var(--ink);}
+.whycard p{margin:0;font-size:13px;line-height:1.62;color:var(--muted);}
+
+/* ---- Quote band -------------------------------------------------------- */
+.qband{background:linear-gradient(160deg,#0d1fb8 0%,#0912a0 100%);color:#fff;padding:76px 0;text-align:center;position:relative;overflow:hidden;}
+.qband::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 80% at 80% 0%,rgba(120,150,255,.25),transparent 60%);}
+.qband .wrap{position:relative;z-index:1;}
+.qband h2{margin:0 0 14px;font-weight:600;font-size:clamp(26px,3.8vw,40px);line-height:1.08;letter-spacing:-1px;}
+.qband p{margin:0 auto 28px;max-width:540px;font-size:15px;line-height:1.72;color:rgba(255,255,255,.85);}
+.qband .btns{justify-content:center;margin:0;}
+.qband .btn--ghost{color:#fff;border-color:rgba(255,255,255,.5);}
+.qband .btn--ghost:hover{background:rgba(255,255,255,.1);}
+
+/* ---- Marquee ----------------------------------------------------------- */
+.mq{background:var(--light);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:16px 0;overflow:hidden;}
+.mq__track{display:flex;align-items:center;gap:30px;white-space:nowrap;width:max-content;
+  animation:nbtMq 38s linear infinite;}
+.mq__track span{font-weight:600;font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:var(--muted);}
+.mq__track i{font-style:normal;color:var(--orange);}
+@keyframes nbtMq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ---- Responsive -------------------------------------------------------- */
+@media (max-width:980px){
+  .indgrid{grid-template-columns:repeat(3,1fr);}
+  .why{grid-template-columns:1fr 1fr;}
+  .grid--cat{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  .hero{padding:74px 0 66px;}
+  .hero .btns{flex-direction:column;align-items:stretch;}
+  .hero .btn{text-align:center;}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr));margin:30px 0;}
+  .indgrid{grid-template-columns:1fr 1fr;}
+  .why{grid-template-columns:1fr;}
+  .grid--cat{grid-template-columns:1fr;}
+  .band .wrap{justify-content:center;text-align:center;}
+  /* keep only a few floating bolts on a small screen */
+  .hero__bolts img:nth-of-type(n+5){display:none;}
+  .hero__bolts img{opacity:.5;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .hero__bolts img,.mq__track{animation:none!important;}
+}

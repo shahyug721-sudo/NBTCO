@@ -1,994 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>New Bharat Trading Company — Industrial Fasteners &amp; Bearings, Mumbai</title>
-<meta name="description" content="Mumbai-based dealer &amp; supplier of industrial fasteners and bearings since 1996. Authorised Unbrako stockist — socket screws, high-tensile &amp; stainless fasteners to DIN, ISO, IS and ASTM standards.">
-<script src="./support.js"></script>
+<meta name="description" content="Mumbai-based dealer and supplier of industrial fasteners and bearings since 1996. Authorised Unbrako stockist — socket screws, high-tensile &amp; stainless fasteners to DIN, ISO, IS and ASTM standards, with ready stock and Pan-India dispatch.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='61,32 46.5,6.89 17.5,6.89 3,32 17.5,57.11 46.5,57.11' fill='%230d1a6b'/%3E%3Cpolygon points='55.5,32 43.75,11.65 20.25,11.65 8.5,32 20.25,52.35 43.75,52.35' fill='none' stroke='%23e30613' stroke-width='2.6'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Arial' font-weight='900' font-size='34' fill='%23ffffff'%3EN%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="./nbt-enhance.css">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="nbt-enhance.css">
 </head>
-<body>
-<x-dc>
-<helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<style>
-  @keyframes drift1 { 0%,100%{ transform:translate(-8%,-4%) scale(1);} 50%{ transform:translate(10%,6%) scale(1.18);} }
-  @keyframes drift2 { 0%,100%{ transform:translate(8%,6%) scale(1.1);} 50%{ transform:translate(-10%,-6%) scale(1);} }
-  @keyframes drift3 { 0%,100%{ transform:translate(-6%,4%) scale(1);} 50%{ transform:translate(8%,-7%) scale(1.16);} }
-  @keyframes drift4 { 0%,100%{ transform:translate(5%,-3%) scale(1.08);} 50%{ transform:translate(-7%,5%) scale(.95);} }
-  @keyframes gridpan { from{ background-position:0 0;} to{ background-position:72px 72px;} }
-  @keyframes gcf { 0%{opacity:0;} 8%{opacity:1;} 25%{opacity:1;} 33%{opacity:0;} 100%{opacity:0;} }
-  @keyframes smokeA { 0%,100%{ transform:translate(-4%,2%) rotate(-8deg) scale(1.05);} 50%{ transform:translate(6%,-5%) rotate(-2deg) scale(1.2);} }
-  @keyframes smokeB { 0%,100%{ transform:translate(5%,-3%) rotate(10deg) scale(1.1);} 50%{ transform:translate(-6%,4%) rotate(4deg) scale(1);} }
-</style>
-<style>
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:#ffffff;}
-  ::selection{background:#c40512;color:#fff;}
-  @media (max-width:860px){
-    [data-navtop]{display:none!important;}
-    [data-navmain]{display:flex!important;flex-wrap:wrap;align-items:center;gap:10px!important;padding:12px 16px!important;}
-    [data-navmain]>div:nth-of-type(1){order:1;margin-right:auto;}
-    [data-navmain]>div:nth-of-type(3){order:2;}
-    [data-navmain]>div:nth-of-type(2){order:3;flex-basis:100%;justify-content:center!important;gap:16px!important;flex-wrap:wrap;}
-    [data-navmain] [data-navlink]{font-size:11px!important;letter-spacing:1.2px!important;}
-    [data-navmain] a[aria-label]{width:34px!important;height:34px!important;}
-    section[data-screen-label]:not([data-hero]):not([data-marquee]){padding-left:20px!important;padding-right:20px!important;}
-    [data-grid="split"]{grid-template-columns:1fr!important;gap:36px!important;}
-    [data-catgrid]{grid-template-columns:1fr 1fr!important;}
-    [data-bg="card"]{grid-template-columns:1fr!important;padding:30px 22px!important;gap:30px!important;}
-  }
-  @media (max-width:860px){
-    [data-indgrid]{grid-template-columns:repeat(3,1fr)!important;}
-  }
-  @media (max-width:600px){
-    [data-indgrid]{grid-template-columns:repeat(2,1fr)!important;}
-    [data-catgrid]{grid-template-columns:1fr!important;}
-    [data-grid="cards"]{grid-template-columns:1fr!important;}
-    [data-gcard]{width:200px!important;height:280px!important;margin:-140px 0 0 -100px!important;}
-    [data-gallery-stage]{height:360px!important;}
-    section[data-screen-label]:not([data-hero]):not([data-marquee]){padding-top:64px!important;padding-bottom:64px!important;}
-  }
-</style>
-</helmet>
-<div ref="{{ scrollRef }}" style="position:relative;height:100vh;overflow-y:auto;overflow-x:hidden;background:#ffffff;font-family:Jost,system-ui,sans-serif;color:#0e1a66;scroll-behavior:smooth;">
+<body data-active="home">
+<div data-nav-mount></div>
 
-  <div data-mesh style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;">
-    <div style="position:absolute;top:-14%;left:-10%;width:60vw;height:60vw;border-radius:50%;filter:blur(100px);background:radial-gradient(circle,rgba(227,6,19,.22),transparent 66%);animation:drift1 26s ease-in-out infinite;"></div>
-    <div data-meshaccent style="position:absolute;bottom:-16%;right:-8%;width:64vw;height:64vw;border-radius:50%;filter:blur(120px);background:radial-gradient(circle,rgba(10,30,181,.14),transparent 66%);animation:drift2 34s ease-in-out infinite;"></div>
-    <div style="position:absolute;top:34%;left:8%;width:46vw;height:46vw;border-radius:50%;filter:blur(110px);background:radial-gradient(circle,rgba(10,30,181,.16),transparent 66%);animation:drift3 29s ease-in-out infinite;"></div>
-    <div style="position:absolute;top:-8%;right:18%;width:38vw;height:38vw;border-radius:50%;filter:blur(95px);background:radial-gradient(circle,rgba(196,5,18,.15),transparent 66%);animation:drift4 24s ease-in-out infinite;"></div>
-    <div style="position:absolute;inset:-72px;opacity:.55;background-image:linear-gradient(rgba(12,20,70,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(12,20,70,.05) 1px,transparent 1px);background-size:74px 74px;animation:gridpan 18s linear infinite;mask-image:radial-gradient(135% 100% at 50% 26%,#000,transparent 84%);-webkit-mask-image:radial-gradient(135% 100% at 50% 26%,#000,transparent 84%);"></div>
+<!-- ============================ HERO ============================ -->
+<header class="hero">
+  <div class="hero__bolts" aria-hidden="true">
+    <img src="assets/bolt.png" alt="" style="left:4%;top:13%;--s:78px;--d:16s;--r:-12deg;--dx:18px;--dy:-26px;">
+    <img src="assets/nut.png"  alt="" style="right:6%;top:9%;--s:64px;--d:19s;--r:16deg;--delay:-3s;--dx:-14px;--dy:-20px;">
+    <img src="assets/bolt.png" alt="" style="left:10%;bottom:15%;--s:56px;--d:14s;--r:22deg;--delay:-6s;--dx:16px;--dy:22px;">
+    <img src="assets/nut.png"  alt="" style="right:8%;bottom:11%;--s:82px;--d:21s;--r:-18deg;--delay:-2s;--dx:-18px;--dy:18px;">
+    <img src="assets/nut.png"  alt="" style="left:2%;top:58%;--s:40px;--d:18s;--r:8deg;--delay:-10s;--dx:12px;--dy:-16px;">
+    <img src="assets/bolt.png" alt="" style="right:2%;top:40%;--s:42px;--d:20s;--r:-8deg;--delay:-7s;--dx:-12px;--dy:16px;">
+    <img src="assets/bolt.png" alt="" style="left:20%;bottom:4%;--s:36px;--d:17s;--r:30deg;--delay:-8s;--dx:14px;--dy:-14px;">
+    <img src="assets/nut.png"  alt="" style="right:19%;top:4%;--s:38px;--d:15s;--r:-24deg;--delay:-4s;--dx:-10px;--dy:18px;">
   </div>
 
-  <nav data-nav style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;flex-direction:column;padding:0;transition:background .4s,border-color .4s,backdrop-filter .4s;border-bottom:1px solid transparent;">
-    <div data-navtop style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;padding:8px 32px;background:linear-gradient(90deg,#0a1aa8,#0f24c8 55%,#0a1aa8);">
-      <span style="justify-self:start;font:600 10.5px/1 Jost;letter-spacing:2px;color:#8f959d;">NAGDEVI · MUMBAI</span>
-      <span style="justify-self:center;font:600 11px/1 Jost;letter-spacing:2.4px;color:#c9ced5;white-space:nowrap;"><span style="color:#ff4d57;">EST. 1996</span>&nbsp;·&nbsp;STAINLESS &amp; HIGH-TENSILE FASTENERS</span>
-      <a href="https://mail.google.com/mail/u/0/?tf=cm&amp;to=nbtcoindia@gmail.com" target="_blank" rel="noopener" style="justify-self:end;font:600 11px/1 Jost;letter-spacing:1.4px;color:#c9ced5;text-decoration:none;transition:color .2s;" style-hover="color:#ff4d57;">NBTCOINDIA@GMAIL.COM</a>
+  <div class="wrap">
+    <p class="hero__eyebrow">EST. 1996 · NAGDEVI, MUMBAI</p>
+    <h1>India's Trusted Supplier<br>of Industrial Fasteners</h1>
+    <p class="hero__sub">Authorised Unbrako stockist and dealer of nuts, bolts, screws, washers, socket screws and bearings — backed by a wide ready stock, genuine quality and prompt dispatch across India.</p>
+    <div class="btns">
+      <a class="btn btn--primary" href="products.html">Explore Our Product Range</a>
+      <a class="btn btn--ghost" data-enquire href="#">Request a Quotation</a>
     </div>
-    <div data-navmain style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;padding:15px 32px;">
-      <div data-jump="top" style="justify-self:start;display:flex;align-items:center;gap:10px;cursor:pointer;">
-        <span class="nbt-mark" style="width:34px;height:34px;"><svg viewBox="0 0 64 64" width="34" height="34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block"><defs><linearGradient id="nbtHexHdr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16299c"/><stop offset="1" stop-color="#0a1352"/></linearGradient></defs><polygon points="61,32 46.5,6.89 17.5,6.89 3,32 17.5,57.11 46.5,57.11" fill="url(#nbtHexHdr)" stroke="#081048" stroke-width="0.8" stroke-linejoin="round"/><polygon points="46.5,6.89 17.5,6.89 3,32 61,32" fill="#ffffff" opacity="0.06"/><polygon points="55.5,32 43.75,11.65 20.25,11.65 8.5,32 20.25,52.35 43.75,52.35" fill="none" stroke="#e30613" stroke-width="2.2" stroke-linejoin="round"/><text x="32" y="43.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="33" fill="#ffffff">N</text></svg></span>
-        <span data-navink style="font:600 13px/1 Jost;letter-spacing:2.5px;color:#0e1a66;">NEW BHARAT TRADING CO.</span>
-      </div>
-      <div style="justify-self:center;display:flex;align-items:center;gap:32px;">
-        <a data-navlink href="index.html" style="font:600 12px/1 Jost;letter-spacing:1.8px;text-transform:uppercase;color:#0e1a66;text-decoration:none;transition:color .2s;">Home</a>
-        <a data-navlink href="products.html" style="font:600 12px/1 Jost;letter-spacing:1.8px;text-transform:uppercase;color:#0e1a66;text-decoration:none;transition:color .2s;">Products</a>
-        <a data-navlink href="about.html" style="font:600 12px/1 Jost;letter-spacing:1.8px;text-transform:uppercase;color:#0e1a66;text-decoration:none;transition:color .2s;">About Us</a>
-        <a data-navlink href="contact.html" style="font:600 12px/1 Jost;letter-spacing:1.8px;text-transform:uppercase;color:#0e1a66;text-decoration:none;transition:color .2s;">Contact Us</a>
-      </div>
-      <div style="justify-self:end;display:flex;align-items:center;gap:10px;">
-        <a href="https://wa.me/919867833131" aria-label="WhatsApp" style="width:38px;height:38px;border-radius:50%;background:#e30613;display:flex;align-items:center;justify-content:center;color:#ffffff;text-decoration:none;transition:background .2s,transform .2s;" style-hover="background:#c40512;transform:translateY(-2px);">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.42 1.32-1.95 1.36-.5.05-.5.4-3.15-.66-2.66-1.06-4.3-3.79-4.43-3.97-.13-.18-1.05-1.4-1.05-2.67 0-1.27.67-1.9.9-2.16.24-.26.52-.32.7-.32.17 0 .35 0 .5.01.16.01.38-.06.59.45.24.58.8 2 .87 2.14.07.14.12.31.02.5-.09.18-.14.29-.28.45-.14.16-.29.35-.42.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.86.27.13.45.2.51.31.07.11.07.63-.17 1.31z"/></svg>
-        </a>
-        <a href="contact.html" aria-label="Call" style="width:38px;height:38px;border-radius:50%;background:#e30613;display:flex;align-items:center;justify-content:center;color:#ffffff;text-decoration:none;transition:background .2s,transform .2s;" style-hover="background:#c40512;transform:translateY(-2px);">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
-        </a>
-        <a href="contact.html" aria-label="Email" style="width:38px;height:38px;border-radius:50%;background:#e30613;display:flex;align-items:center;justify-content:center;color:#ffffff;text-decoration:none;transition:background .2s,transform .2s;" style-hover="background:#c40512;transform:translateY(-2px);">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2.24V18h16V6.24l-8 5.99-8-5.99zM19.6 6H4.4l7.6 5.7L19.6 6z"/></svg>
-        </a>
-      </div>
-    </div>
-  </nav>
 
-  <section data-hero data-bg="hero" data-screen-label="Hero" style="position:relative;height:165vh;background:radial-gradient(120% 70% at 50% 0%,#ffffff,#f2f5fc 60%);">
-    <div style="position:sticky;top:0;height:100vh;overflow:hidden;">
-      <div data-herograd style="position:absolute;inset:0;z-index:0;overflow:hidden;display:none;">
-        <div data-gradbase style="position:absolute;inset:0;"></div>
-        <div data-gradlayer style="position:absolute;inset:0;opacity:0;animation:gcf 28s ease-in-out infinite;animation-delay:0s;"></div>
-        <div data-gradlayer style="position:absolute;inset:0;opacity:0;animation:gcf 28s ease-in-out infinite;animation-delay:7s;"></div>
-        <div data-gradlayer style="position:absolute;inset:0;opacity:0;animation:gcf 28s ease-in-out infinite;animation-delay:14s;"></div>
-        <div data-gradlayer style="position:absolute;inset:0;opacity:0;animation:gcf 28s ease-in-out infinite;animation-delay:21s;"></div>
-        <canvas data-heroshader style="position:absolute;inset:0;width:100%;height:100%;display:none;pointer-events:none;"></canvas>
-        <div data-gradshade style="position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 38%,rgba(0,0,0,.12),rgba(0,0,0,.42) 92%);"></div>
-        <div data-herosmoke style="position:absolute;inset:0;overflow:hidden;display:none;pointer-events:none;">
-          <div style="position:absolute;top:-14%;left:-10%;width:78%;height:100%;filter:blur(42px);opacity:1;background:radial-gradient(48% 58% at 60% 40%,rgba(225,230,240,.72),transparent 66%),radial-gradient(40% 52% at 32% 66%,rgba(180,186,200,.55),transparent 70%);animation:smokeA 30s ease-in-out infinite;"></div>
-          <div style="position:absolute;top:-8%;right:-12%;width:74%;height:105%;filter:blur(44px);opacity:1;background:radial-gradient(44% 58% at 45% 45%,rgba(235,240,248,.7),transparent 66%),radial-gradient(38% 48% at 66% 28%,rgba(190,196,210,.52),transparent 72%);animation:smokeB 36s ease-in-out infinite;"></div>
-          <div style="position:absolute;bottom:-18%;left:18%;width:66%;height:80%;filter:blur(48px);opacity:.95;background:radial-gradient(50% 55% at 50% 50%,rgba(175,180,196,.55),transparent 68%);animation:smokeA 42s ease-in-out infinite reverse;"></div>
-        </div>
-      </div>
-      <video data-herovideo muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0;transition:opacity 1s ease;"></video>
-      <div data-herotint data-bg="tint" style="position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(10,20,90,.74),rgba(10,20,90,.82) 55%,rgba(10,17,70,.92));"></div>
-      <div style="position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 32%,rgba(196,5,18,.12),transparent 60%);pointer-events:none;z-index:1;"></div>
-      <div style="position:absolute;inset:0;background:radial-gradient(70% 55% at 50% 120%,rgba(0,0,0,.05),transparent);pointer-events:none;z-index:1;"></div>
+    <!-- 3D bolt centrepiece — desktop only, mounted by bolt3d.js -->
+    <div class="hero__3d" id="nbt-bolt3d" aria-hidden="true"></div>
+  </div>
+</header>
 
-      <div data-herocontent style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:14;text-align:center;width:92%;max-width:680px;">
-        <p data-heroink="eyebrow" style="margin:0 0 18px;font:600 11px/1 Jost;letter-spacing:5px;color:#e30613;">EST. 1996 · NAGDEVI, MUMBAI</p>
-        <h1 data-heroink="head" style="margin:0;font:600 clamp(30px,5.6vw,62px)/1.03 Jost;letter-spacing:-1.5px;color:#0e1a66;">Every machine starts<br>with a fastener.</h1>
-        <p data-heroink="sub" style="margin:22px auto 0;max-width:480px;font:400 15px/1.65 Jost;color:#5b6270;">Nuts, bolts, screws, washers, socket screws, high-tensile &amp; stainless fasteners and bearings — a complete range with ready stock and prompt dispatch across India.</p>
-        <div style="display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap;">
-          <a data-nbt-magnetic href="products.html" style="font:600 13px/1 Jost;letter-spacing:.8px;color:#ffffff;background:#e30613;padding:15px 26px;border-radius:8px;text-decoration:none;cursor:pointer;box-shadow:0 10px 30px -10px rgba(227,6,19,.6);">Browse the range</a>
-          <a data-nbt-magnetic data-heroink="outline" href="https://mail.google.com/mail/u/0/?tf=cm&amp;to=nbtcoindia@gmail.com" target="_blank" rel="noopener" style="font:600 13px/1 Jost;letter-spacing:.8px;color:#0e1a66;background:transparent;padding:15px 26px;border-radius:8px;border:1px solid rgba(0,0,0,.16);text-decoration:none;">Request a quotation</a>
-        </div>
-      </div>
-
-      <div style="position:absolute;inset:0;z-index:8;">
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/bolt.png" alt="Hex bolt" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/nut.png" alt="Hex nut" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/bolt.png" alt="Hex bolt" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/nut.png" alt="Hex nut" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/bolt.png" alt="Hex bolt" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/nut.png" alt="Hex nut" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/bolt.png" alt="Hex bolt" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/nut.png" alt="Hex nut" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/bolt.png" alt="Hex bolt" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/nut.png" alt="Hex nut" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/bolt.png" alt="Hex bolt" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/nut.png" alt="Hex nut" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/bolt.png" alt="Hex bolt" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/nut.png" alt="Hex nut" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/bolt.png" alt="Hex bolt" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/nut.png" alt="Hex nut" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/bolt.png" alt="Hex bolt" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/nut.png" alt="Hex nut" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/bolt.png" alt="Hex bolt" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-        <div data-card style="position:absolute;left:50%;top:50%;width:74px;height:74px;margin:-37px 0 0 -37px;opacity:0;will-change:transform;"><div data-fx style="width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s;cursor:pointer;" style-hover="transform:scale(1.25);filter:brightness(1.18)"><img src="assets/nut.png" alt="Hex nut" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px rgba(0,0,0,.6));pointer-events:none;"></div></div>
-      </div>
-
-    </div>
-  </section>
-
-  <div data-bg="dark" style="position:relative;background:#0d1a6b;border-top:1px solid rgba(0,0,0,.07);border-bottom:1px solid rgba(0,0,0,.07);">
-    <div data-rev style="max-width:1180px;margin:0 auto;padding:18px 28px;display:flex;flex-wrap:wrap;gap:14px 38px;align-items:center;justify-content:center;font:600 12px/1 Jost;letter-spacing:2px;color:#6b7280;">
-      <span style="color:#e30613;">STANDARDS:</span><span>DIN</span><span>·</span><span>ISO</span><span>·</span><span>IS</span><span>·</span><span>ASTM</span><span style="width:1px;height:14px;background:#cfd6e6;"></span><span>STAINLESS &amp; HIGH-TENSILE</span><span style="width:1px;height:14px;background:#cfd6e6;"></span><span>PAN-INDIA DISPATCH</span>
+<!-- ============================ STATS ============================ -->
+<section class="section" style="padding-top:56px;padding-bottom:16px;">
+  <div class="wrap">
+    <div class="stats" style="margin-top:0;">
+      <div class="stat"><b>30+</b><span>Years in business</span></div>
+      <div class="stat"><b>4.8★</b><span>Customer rating</span></div>
+      <div class="stat"><b>Unbrako</b><span>Authorised stockist</span></div>
+      <div class="stat"><b>Pan-India</b><span>Prompt dispatch</span></div>
     </div>
   </div>
+</section>
 
-  <section data-marquee data-screen-label="Marquee" style="position:relative;z-index:1;background:linear-gradient(180deg,#f3f6fc,#e8edf8);padding:90px 0 64px;overflow:hidden;">
-    <div data-rev style="max-width:1180px;margin:0 auto 40px;padding:0 28px;text-align:center;">
-      <p data-plx="0.13" style="margin:0 0 10px;font:700 11px/1 Jost;letter-spacing:5px;color:#e30613;">IN STOCK NOW</p>
-      <h2 data-plx="0.07" style="margin:0;font:600 clamp(24px,3.4vw,40px)/1.05 Jost;letter-spacing:-1px;color:#0e1a66;">A wall of ready fasteners.</h2>
-    </div>
-    <div data-marquee-row="1" style="display:flex;gap:12px;margin-bottom:12px;will-change:transform;"></div>
-    <div data-marquee-row="2" style="display:flex;gap:12px;will-change:transform;"></div>
-  </section>
+<!-- ======================= STANDARDS BAND ======================= -->
+<section class="band">
+  <div class="wrap">
+    <h2 class="band__t">We supply to international standards.</h2>
+    <div class="band__stds"><i>STANDARDS</i><span>DIN</span>·<span>ISO</span>·<span>IS</span>·<span>ASTM</span></div>
+    <a class="btn btn--primary" data-enquire href="#">Enquire Now</a>
+  </div>
+</section>
 
-  <section id="categories" data-bg="light" data-band="dark" data-screen-label="Categories" style="position:relative;background:#eef2fb;padding:96px 28px;">
-    <div style="max-width:1180px;margin:0 auto;">
-      <div style="display:flex;align-items:center;gap:18px;margin-bottom:64px;"><span style="flex:1;height:2px;background:linear-gradient(90deg,transparent 0%,#c40512 30%,#c40512 70%,transparent 100%);"></span><span style="width:9px;height:9px;border-radius:50%;background:#e30613;flex:0 0 auto;box-shadow:0 0 0 5px rgba(227,6,19,.16);"></span><span style="flex:1;height:2px;background:linear-gradient(90deg,transparent 0%,#c40512 30%,#c40512 70%,transparent 100%);"></span></div>
-      <div data-rev style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:48px;">
-        <div>
-          <p data-ink="eyebrow" data-plx="0.13" style="margin:0 0 12px;font:700 11px/1 Jost;letter-spacing:4px;color:#c40512;">THE FULL RANGE</p>
-          <h2 data-ink="head" data-plx="0.07" style="margin:0;font:600 clamp(28px,4vw,44px)/1.05 Jost;letter-spacing:-1px;color:#0e1a66;">Nine fastener families,<br>one ready stock.</h2>
-        </div>
-        <div><p data-ink="sub" style="margin:0;max-width:340px;font:400 14px/1.6 Jost;color:#6b7280;">From M2 machine screws to M64 foundation bolts — to DIN, ISO, IS and ASTM standards, in carbon, alloy and stainless steel.</p>
-          <a href="products.html" style="display:inline-block;margin-top:14px;font:600 13px/1 Jost;letter-spacing:.6px;color:#c40512;text-decoration:none;">Browse the full catalog →</a></div>
+<!-- ======================= PRODUCT RANGE ======================== -->
+<section class="section" id="categories">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <p class="sec-title" style="margin:0;color:var(--rust);">Our Product Range</p>
+        <h2>Everything you need,<br>in ready stock.</h2>
       </div>
-      <div data-catgrid style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
-        <a data-catcard href="category.html?cat=hex-fasteners" style="position:relative;display:block;text-decoration:none;color:inherit;background:linear-gradient(165deg,#ffffff 0%,#eef2fb 100%);border:1px solid #dfe4f0;border-radius:16px;overflow:hidden;padding:26px;box-shadow:0 16px 36px -22px rgba(12,20,70,.42);opacity:0;transform:translateY(34px);will-change:transform,opacity;"><span data-spot style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(260px circle at 50% 40%,rgba(227,6,19,.16),transparent 60%);"></span><div data-catimg style="position:relative;height:158px;margin:-26px -26px 20px;background:radial-gradient(125% 125% at 50% 12%,#f4f7fd,#e3e9f6);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/fam-bolts.png" alt="Bolts and screws" style="max-width:74%;max-height:82%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(12,20,70,.22));transition:transform .5s cubic-bezier(.2,.7,.2,1);"></div><div style="position:relative;display:flex;align-items:center;justify-content:space-between;"><span style="font:700 13px/1 Jost;color:#e30613;letter-spacing:1px;">01</span><span data-catarrow style="font:600 20px/1 Jost;color:#e30613;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s;">→</span></div><h3 style="position:relative;margin:14px 0 8px;font:600 19px/1.2 Jost;color:#0e1a66;">Bolts &amp; Screws</h3><p style="position:relative;margin:0;font:400 13.5px/1.6 Jost;color:#6b7280;">High-tensile hex, structural, carriage, eye, U &amp; foundation bolts in metric and inch series.</p></a>
-        <a data-catcard href="category.html?cat=socket-screws" style="position:relative;display:block;text-decoration:none;color:inherit;background:linear-gradient(165deg,#ffffff 0%,#eef2fb 100%);border:1px solid #dfe4f0;border-radius:16px;overflow:hidden;padding:26px;box-shadow:0 16px 36px -22px rgba(12,20,70,.42);opacity:0;transform:translateY(34px);will-change:transform,opacity;"><span data-spot style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(260px circle at 50% 40%,rgba(227,6,19,.16),transparent 60%);"></span><div data-catimg style="position:relative;height:158px;margin:-26px -26px 20px;background:radial-gradient(125% 125% at 50% 12%,#f4f7fd,#e3e9f6);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/fam-socket.png" alt="Socket screws" style="max-width:74%;max-height:82%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(12,20,70,.22));transition:transform .5s cubic-bezier(.2,.7,.2,1);"></div><div style="position:relative;display:flex;align-items:center;justify-content:space-between;"><span style="font:700 13px/1 Jost;color:#e30613;letter-spacing:1px;">02</span><span data-catarrow style="font:600 20px/1 Jost;color:#e30613;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s;">→</span></div><h3 style="position:relative;margin:14px 0 8px;font:600 19px/1.2 Jost;color:#0e1a66;">Socket Screws</h3><p style="position:relative;margin:0;font:400 13.5px/1.6 Jost;color:#6b7280;">Cap, countersunk, low head, shoulder, button head and set screws in alloy steel.</p></a>
-        <a data-catcard href="category.html?cat=hex-fasteners" style="position:relative;display:block;text-decoration:none;color:inherit;background:linear-gradient(165deg,#ffffff 0%,#eef2fb 100%);border:1px solid #dfe4f0;border-radius:16px;overflow:hidden;padding:26px;box-shadow:0 16px 36px -22px rgba(12,20,70,.42);opacity:0;transform:translateY(34px);will-change:transform,opacity;"><span data-spot style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(260px circle at 50% 40%,rgba(227,6,19,.16),transparent 60%);"></span><div data-catimg style="position:relative;height:158px;margin:-26px -26px 20px;background:radial-gradient(125% 125% at 50% 12%,#f4f7fd,#e3e9f6);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/fam-nuts.png" alt="Nuts" style="max-width:74%;max-height:82%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(12,20,70,.22));transition:transform .5s cubic-bezier(.2,.7,.2,1);"></div><div style="position:relative;display:flex;align-items:center;justify-content:space-between;"><span style="font:700 13px/1 Jost;color:#e30613;letter-spacing:1px;">03</span><span data-catarrow style="font:600 20px/1 Jost;color:#e30613;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s;">→</span></div><h3 style="position:relative;margin:14px 0 8px;font:600 19px/1.2 Jost;color:#0e1a66;">Nuts</h3><p style="position:relative;margin:0;font:400 13.5px/1.6 Jost;color:#6b7280;">Hex, lock, nylock, heavy hex, dome, wing, coupling and self-locking nuts.</p></a>
-        <a data-catcard href="category.html?cat=hex-fasteners" style="position:relative;display:block;text-decoration:none;color:inherit;background:linear-gradient(165deg,#ffffff 0%,#eef2fb 100%);border:1px solid #dfe4f0;border-radius:16px;overflow:hidden;padding:26px;box-shadow:0 16px 36px -22px rgba(12,20,70,.42);opacity:0;transform:translateY(34px);will-change:transform,opacity;"><span data-spot style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(260px circle at 50% 40%,rgba(227,6,19,.16),transparent 60%);"></span><div data-catimg style="position:relative;height:158px;margin:-26px -26px 20px;background:radial-gradient(125% 125% at 50% 12%,#f4f7fd,#e3e9f6);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/fam-washers.png" alt="Washers" style="max-width:74%;max-height:82%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(12,20,70,.22));transition:transform .5s cubic-bezier(.2,.7,.2,1);"></div><div style="position:relative;display:flex;align-items:center;justify-content:space-between;"><span style="font:700 13px/1 Jost;color:#e30613;letter-spacing:1px;">04</span><span data-catarrow style="font:600 20px/1 Jost;color:#e30613;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s;">→</span></div><h3 style="position:relative;margin:14px 0 8px;font:600 19px/1.2 Jost;color:#0e1a66;">Washers</h3><p style="position:relative;margin:0;font:400 13.5px/1.6 Jost;color:#6b7280;">Spring, plain, fender, hardened, structural and self-locking washers.</p></a>
-        <a data-catcard href="products.html" style="position:relative;display:block;text-decoration:none;color:inherit;background:linear-gradient(165deg,#ffffff 0%,#eef2fb 100%);border:1px solid #dfe4f0;border-radius:16px;overflow:hidden;padding:26px;box-shadow:0 16px 36px -22px rgba(12,20,70,.42);opacity:0;transform:translateY(34px);will-change:transform,opacity;"><span data-spot style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(260px circle at 50% 40%,rgba(227,6,19,.16),transparent 60%);"></span><div data-catimg style="position:relative;height:158px;margin:-26px -26px 20px;background:radial-gradient(125% 125% at 50% 12%,#f4f7fd,#e3e9f6);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/fam-machine.png" alt="Machine screws" style="max-width:74%;max-height:82%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(12,20,70,.22));transition:transform .5s cubic-bezier(.2,.7,.2,1);"></div><div style="position:relative;display:flex;align-items:center;justify-content:space-between;"><span style="font:700 13px/1 Jost;color:#e30613;letter-spacing:1px;">05</span><span data-catarrow style="font:600 20px/1 Jost;color:#e30613;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s;">→</span></div><h3 style="position:relative;margin:14px 0 8px;font:600 19px/1.2 Jost;color:#0e1a66;">Machine Screws</h3><p style="position:relative;margin:0;font:400 13.5px/1.6 Jost;color:#6b7280;">Pan head, countersunk and cheese head machine screws in many drives and finishes.</p></a>
-        <a data-catcard href="products.html" style="position:relative;display:block;text-decoration:none;color:inherit;background:linear-gradient(165deg,#ffffff 0%,#eef2fb 100%);border:1px solid #dfe4f0;border-radius:16px;overflow:hidden;padding:26px;box-shadow:0 16px 36px -22px rgba(12,20,70,.42);opacity:0;transform:translateY(34px);will-change:transform,opacity;"><span data-spot style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(260px circle at 50% 40%,rgba(227,6,19,.16),transparent 60%);"></span><div data-catimg style="position:relative;height:158px;margin:-26px -26px 20px;background:radial-gradient(125% 125% at 50% 12%,#f4f7fd,#e3e9f6);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/fam-selftap.png" alt="Self-tapping and self-drilling screws" style="max-width:74%;max-height:82%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(12,20,70,.22));transition:transform .5s cubic-bezier(.2,.7,.2,1);"></div><div style="position:relative;display:flex;align-items:center;justify-content:space-between;"><span style="font:700 13px/1 Jost;color:#e30613;letter-spacing:1px;">06</span><span data-catarrow style="font:600 20px/1 Jost;color:#e30613;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s;">→</span></div><h3 style="position:relative;margin:14px 0 8px;font:600 19px/1.2 Jost;color:#0e1a66;">Self-Tapping &amp; Self-Drilling</h3><p style="position:relative;margin:0;font:400 13.5px/1.6 Jost;color:#6b7280;">Thread-forming and self-drilling (TEK) screws for sheet metal and cladding.</p></a>
-        <a data-catcard href="products.html" style="position:relative;display:block;text-decoration:none;color:inherit;background:linear-gradient(165deg,#ffffff 0%,#eef2fb 100%);border:1px solid #dfe4f0;border-radius:16px;overflow:hidden;padding:26px;box-shadow:0 16px 36px -22px rgba(12,20,70,.42);opacity:0;transform:translateY(34px);will-change:transform,opacity;"><span data-spot style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(260px circle at 50% 40%,rgba(227,6,19,.16),transparent 60%);"></span><div data-catimg style="position:relative;height:158px;margin:-26px -26px 20px;background:radial-gradient(125% 125% at 50% 12%,#f4f7fd,#e3e9f6);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/fam-rods.png" alt="Threaded rods" style="max-width:74%;max-height:82%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(12,20,70,.22));transition:transform .5s cubic-bezier(.2,.7,.2,1);"></div><div style="position:relative;display:flex;align-items:center;justify-content:space-between;"><span style="font:700 13px/1 Jost;color:#e30613;letter-spacing:1px;">07</span><span data-catarrow style="font:600 20px/1 Jost;color:#e30613;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s;">→</span></div><h3 style="position:relative;margin:14px 0 8px;font:600 19px/1.2 Jost;color:#0e1a66;">Threaded Rods</h3><p style="position:relative;margin:0;font:400 13.5px/1.6 Jost;color:#6b7280;">Continuous-thread rods and stud bolts, cut to length on request.</p></a>
-        <a data-catcard href="category.html?cat=construction" style="position:relative;display:block;text-decoration:none;color:inherit;background:linear-gradient(165deg,#ffffff 0%,#eef2fb 100%);border:1px solid #dfe4f0;border-radius:16px;overflow:hidden;padding:26px;box-shadow:0 16px 36px -22px rgba(12,20,70,.42);opacity:0;transform:translateY(34px);will-change:transform,opacity;"><span data-spot style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(260px circle at 50% 40%,rgba(227,6,19,.16),transparent 60%);"></span><div data-catimg style="position:relative;height:158px;margin:-26px -26px 20px;background:radial-gradient(125% 125% at 50% 12%,#f4f7fd,#e3e9f6);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/fam-anchors.png" alt="Anchor fasteners" style="max-width:74%;max-height:82%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(12,20,70,.22));transition:transform .5s cubic-bezier(.2,.7,.2,1);"></div><div style="position:relative;display:flex;align-items:center;justify-content:space-between;"><span style="font:700 13px/1 Jost;color:#e30613;letter-spacing:1px;">08</span><span data-catarrow style="font:600 20px/1 Jost;color:#e30613;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s;">→</span></div><h3 style="position:relative;margin:14px 0 8px;font:600 19px/1.2 Jost;color:#0e1a66;">Anchor Fasteners</h3><p style="position:relative;margin:0;font:400 13.5px/1.6 Jost;color:#6b7280;">Wedge, drop-in and sleeve anchors for fixing into concrete and masonry.</p></a>
-        <a data-catcard href="category.html?cat=petrochemical" style="position:relative;display:block;text-decoration:none;color:inherit;background:linear-gradient(165deg,#ffffff 0%,#eef2fb 100%);border:1px solid #dfe4f0;border-radius:16px;overflow:hidden;padding:26px;box-shadow:0 16px 36px -22px rgba(12,20,70,.42);opacity:0;transform:translateY(34px);will-change:transform,opacity;"><span data-spot style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(260px circle at 50% 40%,rgba(227,6,19,.16),transparent 60%);"></span><div data-catimg style="position:relative;height:158px;margin:-26px -26px 20px;background:radial-gradient(125% 125% at 50% 12%,#f4f7fd,#e3e9f6);display:flex;align-items:center;justify-content:center;overflow:hidden;"><img src="assets/fam-special.png" alt="Special material fasteners" style="max-width:74%;max-height:82%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(12,20,70,.22));transition:transform .5s cubic-bezier(.2,.7,.2,1);"></div><div style="position:relative;display:flex;align-items:center;justify-content:space-between;"><span style="font:700 13px/1 Jost;color:#e30613;letter-spacing:1px;">09</span><span data-catarrow style="font:600 20px/1 Jost;color:#e30613;opacity:0;transform:translateX(-8px);transition:opacity .3s,transform .3s;">→</span></div><h3 style="position:relative;margin:14px 0 8px;font:600 19px/1.2 Jost;color:#0e1a66;">Special Material</h3><p style="position:relative;margin:0;font:400 13.5px/1.6 Jost;color:#6b7280;">SS 304/316, hot-dip galvanized and high-temperature alloy fasteners.</p></a>
-      </div>
+      <a class="sechead__link" href="products.html">Explore all →</a>
     </div>
-  </section>
+    <div class="grid grid--cat" data-category-list></div>
+  </div>
+</section>
 
-  <section data-gallery data-screen-label="Industries" style="position:relative;background:#ffffff;padding:96px 28px 112px;overflow:hidden;">
-    <div style="max-width:1180px;margin:0 auto;text-align:center;">
-      <p style="margin:0 0 12px;font:700 11px/1 Jost;letter-spacing:4px;color:#c40512;">TRUSTED ACROSS INDUSTRIES</p>
-      <h2 style="margin:0;font:600 clamp(28px,4vw,44px)/1.05 Jost;letter-spacing:-1px;color:#0e1a66;">Fasteners for every sector.</h2>
-    </div>
-    <div data-gallery-stage style="position:relative;height:440px;margin-top:34px;perspective:2000px;">
-      <div data-gallery-rot style="position:absolute;inset:0;transform-style:preserve-3d;will-change:transform;">
-        <div data-gcard style="position:absolute;left:50%;top:50%;width:256px;height:336px;margin:-168px 0 0 -128px;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(12,20,70,.5);border:1px solid #dfe4f0;background:#0d1a6b;will-change:transform,opacity;backface-visibility:hidden;"><img src="assets/ind-petrochemical.jpg" alt="Chemical and petrochemical" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(9,15,64,.88));"></div><div style="position:absolute;left:18px;right:18px;bottom:16px;"><h3 style="margin:0;font:600 18px/1.22 Jost;color:#fff;">Chemical &amp; Petrochemical</h3><p style="margin:6px 0 0;font:500 12px/1.4 Jost;color:rgba(255,255,255,.75);">SS 304/316 · high-temp alloys</p></div></div>
-        <div data-gcard style="position:absolute;left:50%;top:50%;width:256px;height:336px;margin:-168px 0 0 -128px;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(12,20,70,.5);border:1px solid #dfe4f0;background:#0d1a6b;will-change:transform,opacity;backface-visibility:hidden;"><img src="assets/ind-construction.jpg" alt="Engineering and construction" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(9,15,64,.88));"></div><div style="position:absolute;left:18px;right:18px;bottom:16px;"><h3 style="margin:0;font:600 18px/1.22 Jost;color:#fff;">Engineering &amp; Construction</h3><p style="margin:6px 0 0;font:500 12px/1.4 Jost;color:rgba(255,255,255,.75);">Structural &amp; foundation bolts</p></div></div>
-        <div data-gcard style="position:absolute;left:50%;top:50%;width:256px;height:336px;margin:-168px 0 0 -128px;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(12,20,70,.5);border:1px solid #dfe4f0;background:#0d1a6b;will-change:transform,opacity;backface-visibility:hidden;"><img src="assets/ind-energy.jpg" alt="Energy and power" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(9,15,64,.88));"></div><div style="position:absolute;left:18px;right:18px;bottom:16px;"><h3 style="margin:0;font:600 18px/1.22 Jost;color:#fff;">Energy &amp; Power</h3><p style="margin:6px 0 0;font:500 12px/1.4 Jost;color:rgba(255,255,255,.75);">High-tensile fasteners</p></div></div>
-        <div data-gcard style="position:absolute;left:50%;top:50%;width:256px;height:336px;margin:-168px 0 0 -128px;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(12,20,70,.5);border:1px solid #dfe4f0;background:#0d1a6b;will-change:transform,opacity;backface-visibility:hidden;"><img src="assets/ind-automotive.jpg" alt="Automotive" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(9,15,64,.88));"></div><div style="position:absolute;left:18px;right:18px;bottom:16px;"><h3 style="margin:0;font:600 18px/1.22 Jost;color:#fff;">Automotive</h3><p style="margin:6px 0 0;font:500 12px/1.4 Jost;color:rgba(255,255,255,.75);">Precision socket screws</p></div></div>
-        <div data-gcard style="position:absolute;left:50%;top:50%;width:256px;height:336px;margin:-168px 0 0 -128px;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(12,20,70,.5);border:1px solid #dfe4f0;background:#0d1a6b;will-change:transform,opacity;backface-visibility:hidden;"><img src="assets/ind-aviation.jpg" alt="Aviation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(9,15,64,.88));"></div><div style="position:absolute;left:18px;right:18px;bottom:16px;"><h3 style="margin:0;font:600 18px/1.22 Jost;color:#fff;">Aviation</h3><p style="margin:6px 0 0;font:500 12px/1.4 Jost;color:rgba(255,255,255,.75);">Special-material fasteners</p></div></div>
-        <div data-gcard style="position:absolute;left:50%;top:50%;width:256px;height:336px;margin:-168px 0 0 -128px;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(12,20,70,.5);border:1px solid #dfe4f0;background:#0d1a6b;will-change:transform,opacity;backface-visibility:hidden;"><img src="assets/ind-shipping.jpg" alt="Shipping and marine" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(9,15,64,.88));"></div><div style="position:absolute;left:18px;right:18px;bottom:16px;"><h3 style="margin:0;font:600 18px/1.22 Jost;color:#fff;">Shipping &amp; Marine</h3><p style="margin:6px 0 0;font:500 12px/1.4 Jost;color:rgba(255,255,255,.75);">Corrosion-resistant grades</p></div></div>
-        <div data-gcard style="position:absolute;left:50%;top:50%;width:256px;height:336px;margin:-168px 0 0 -128px;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(12,20,70,.5);border:1px solid #dfe4f0;background:#0d1a6b;will-change:transform,opacity;backface-visibility:hidden;"><img src="assets/ind-robotics.jpg" alt="Robotics and automation" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(9,15,64,.88));"></div><div style="position:absolute;left:18px;right:18px;bottom:16px;"><h3 style="margin:0;font:600 18px/1.22 Jost;color:#fff;">Robotics &amp; Automation</h3><p style="margin:6px 0 0;font:500 12px/1.4 Jost;color:rgba(255,255,255,.75);">Micro &amp; machine screws</p></div></div>
-        <div data-gcard style="position:absolute;left:50%;top:50%;width:256px;height:336px;margin:-168px 0 0 -128px;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(12,20,70,.5);border:1px solid #dfe4f0;background:#0d1a6b;will-change:transform,opacity;backface-visibility:hidden;"><img src="assets/ind-manufacturing.jpg" alt="Manufacturing" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(9,15,64,.88));"></div><div style="position:absolute;left:18px;right:18px;bottom:16px;"><h3 style="margin:0;font:600 18px/1.22 Jost;color:#fff;">Manufacturing</h3><p style="margin:6px 0 0;font:500 12px/1.4 Jost;color:rgba(255,255,255,.75);">Full range, ready stock</p></div></div>
+<!-- ========================= INDUSTRIES ========================= -->
+<section class="section section--light">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <p class="sec-title" style="margin:0;color:var(--rust);">Industries We Serve</p>
+        <h2>Fasteners for every sector.</h2>
       </div>
     </div>
-  </section>
+    <div class="indgrid">
+      <div class="indcard"><img src="assets/ind-petrochemical.jpg" alt="Chemical and petrochemical"><span>Chemical &amp; Petrochemical</span></div>
+      <div class="indcard"><img src="assets/ind-construction.jpg" alt="Engineering and construction"><span>Engineering &amp; Construction</span></div>
+      <div class="indcard"><img src="assets/ind-energy.jpg" alt="Energy and power"><span>Energy &amp; Power</span></div>
+      <div class="indcard"><img src="assets/ind-automotive.jpg" alt="Automotive"><span>Automotive</span></div>
+      <div class="indcard"><img src="assets/ind-aviation.jpg" alt="Aviation"><span>Aviation</span></div>
+      <div class="indcard"><img src="assets/ind-shipping.jpg" alt="Shipping and marine"><span>Shipping &amp; Marine</span></div>
+      <div class="indcard"><img src="assets/ind-robotics.jpg" alt="Robotics and automation"><span>Robotics &amp; Automation</span></div>
+      <div class="indcard"><img src="assets/ind-manufacturing.jpg" alt="Manufacturing"><span>Manufacturing</span></div>
+      <div class="indcard"><img src="assets/ind-medical.jpg" alt="Medical and pharma"><span>Medical &amp; Pharma</span></div>
+      <div class="indcard"><img src="assets/ind-electrical.jpg" alt="Electrical"><span>Electrical</span></div>
+    </div>
+  </div>
+</section>
 
-  <section data-bg="panel" data-band="dark" data-screen-label="Why us" style="position:relative;background:#0d1a6b;padding:96px 28px;">
-    <div style="max-width:1180px;margin:0 auto;">
-      <div style="display:flex;align-items:center;gap:18px;margin-bottom:64px;"><span style="flex:1;height:2px;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.32) 30%,rgba(255,255,255,.32) 70%,transparent 100%);"></span><span style="width:9px;height:9px;border-radius:50%;background:#e30613;flex:0 0 auto;box-shadow:0 0 0 5px rgba(227,6,19,.22);"></span><span style="flex:1;height:2px;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.32) 30%,rgba(255,255,255,.32) 70%,transparent 100%);"></span></div>
-      <div data-grid="split" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-        <div data-rev>
-          <p data-ink="eyebrow" data-plx="0.13" style="margin:0 0 12px;font:700 11px/1 Jost;letter-spacing:4px;color:#c40512;">WHY NEW BHARAT</p>
-          <h2 data-ink="head" data-plx="0.07" style="margin:0 0 18px;font:600 clamp(26px,3.6vw,40px)/1.08 Jost;letter-spacing:-1px;color:#0e1a66;">Three decades of getting the right part to the job.</h2>
-          <p data-ink="sub" style="margin:0;font:400 14.5px/1.7 Jost;color:#5b6270;">Operating from Nagdevi in the heart of Mumbai's hardware market, we keep a wide ready stock and back it with genuine quality, fair pricing and quick Pan-India dispatch.</p>
-        </div>
-        <div data-grid="cards" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <div style="background:#ffffff;border:1px solid #dfe4f0;border-radius:14px;padding:22px;box-shadow:0 12px 30px -22px rgba(12,20,70,.3);" data-rev><div style="width:34px;height:34px;border-radius:9px;background:rgba(227,6,19,.16);display:flex;align-items:center;justify-content:center;font:700 15px/1 Jost;color:#c40512;">✓</div><h3 style="margin:14px 0 6px;font:600 15px/1.2 Jost;color:#0e1a66;">Wide range in stock</h3><p style="margin:0;font:400 12.5px/1.55 Jost;color:#6b7280;">Bolts, nuts, washers, socket, anchors and special-material fasteners under one roof.</p></div>
-          <div style="background:#ffffff;border:1px solid #dfe4f0;border-radius:14px;padding:22px;box-shadow:0 12px 30px -22px rgba(12,20,70,.3);" data-rev><div style="width:34px;height:34px;border-radius:9px;background:rgba(227,6,19,.16);display:flex;align-items:center;justify-content:center;font:700 15px/1 Jost;color:#c40512;">◆</div><h3 style="margin:14px 0 6px;font:600 15px/1.2 Jost;color:#0e1a66;">Certified quality</h3><p style="margin:0;font:400 12.5px/1.55 Jost;color:#6b7280;">Fasteners to DIN, ISO, ASTM and IS standards with documentation on request.</p></div>
-          <div style="background:#ffffff;border:1px solid #dfe4f0;border-radius:14px;padding:22px;box-shadow:0 12px 30px -22px rgba(12,20,70,.3);" data-rev><div style="width:34px;height:34px;border-radius:9px;background:rgba(227,6,19,.16);display:flex;align-items:center;justify-content:center;font:700 15px/1 Jost;color:#c40512;">⚙</div><h3 style="margin:14px 0 6px;font:600 15px/1.2 Jost;color:#0e1a66;">Engineering support</h3><p style="margin:0;font:400 12.5px/1.55 Jost;color:#6b7280;">Help selecting the right grade, standard and finish for your joint.</p></div>
-          <div style="background:#ffffff;border:1px solid #dfe4f0;border-radius:14px;padding:22px;box-shadow:0 12px 30px -22px rgba(12,20,70,.3);" data-rev><div style="width:34px;height:34px;border-radius:9px;background:rgba(227,6,19,.16);display:flex;align-items:center;justify-content:center;font:700 15px/1 Jost;color:#c40512;">→</div><h3 style="margin:14px 0 6px;font:600 15px/1.2 Jost;color:#0e1a66;">Fast quotation</h3><p style="margin:0;font:400 12.5px/1.55 Jost;color:#6b7280;">Send your requirement and get availability and a quote quickly.</p></div>
-        </div>
+<!-- =========================== WHY US =========================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="sechead">
+      <div>
+        <p class="sec-title" style="margin:0;color:var(--rust);">Why New Bharat</p>
+        <h2>Three decades of getting<br>the right part to the job.</h2>
       </div>
     </div>
-  </section>
-
-  <section id="about" data-bg="light" data-band="light" data-screen-label="About" style="position:relative;background:#eef2fb;padding:96px 28px;">
-    <div style="max-width:1180px;margin:0 auto;">
-      <div style="display:flex;align-items:center;gap:18px;margin-bottom:64px;"><span style="flex:1;height:2px;background:linear-gradient(90deg,transparent 0%,#c40512 30%,#c40512 70%,transparent 100%);"></span><span style="width:9px;height:9px;border-radius:50%;background:#e30613;flex:0 0 auto;box-shadow:0 0 0 5px rgba(227,6,19,.16);"></span><span style="flex:1;height:2px;background:linear-gradient(90deg,transparent 0%,#c40512 30%,#c40512 70%,transparent 100%);"></span></div>
-      <div data-grid="split" style="display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;">
-        <div data-rev>
-          <p data-plx="0.13" style="margin:0 0 12px;font:700 11px/1 Jost;letter-spacing:4px;color:#c40512;">ABOUT US</p>
-          <h2 data-plx="0.07" style="margin:0 0 20px;font:600 clamp(26px,3.6vw,40px)/1.08 Jost;letter-spacing:-1px;color:#0e1a66;">New Bharat Trading Company</h2>
-          <p style="margin:0 0 16px;font:400 14.5px/1.75 Jost;color:#3b4358;">Established in 1996, we are a Mumbai-based dealer and supplier of industrial fasteners and bearings, operating from Nagdevi in the heart of the city's hardware market.</p>
-          <p data-animtext style="margin:0;font:500 clamp(16px,1.9vw,22px)/1.6 Jost;color:#0e1a66;">Over nearly three decades we have built long-term relationships by keeping a wide ready stock and backing it with genuine quality, fair pricing and quick Pan-India dispatch.</p>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <div style="background:#ffffff;border:1px solid #dfe4f0;border-radius:14px;padding:26px;box-shadow:0 12px 30px -22px rgba(12,20,70,.3);" data-rev><div style="font:600 34px/1 Jost;letter-spacing:-1px;color:#c40512;">1996</div><div style="margin-top:8px;font:500 12.5px/1.4 Jost;color:#6b7280;">Established</div></div>
-          <div style="background:#ffffff;border:1px solid #dfe4f0;border-radius:14px;padding:26px;box-shadow:0 12px 30px -22px rgba(12,20,70,.3);" data-rev><div style="font:600 34px/1 Jost;letter-spacing:-1px;color:#c40512;">30+</div><div style="margin-top:8px;font:500 12.5px/1.4 Jost;color:#6b7280;">Years in business</div></div>
-          <div style="background:#ffffff;border:1px solid #dfe4f0;border-radius:14px;padding:26px;box-shadow:0 12px 30px -22px rgba(12,20,70,.3);" data-rev><div style="font:600 34px/1 Jost;letter-spacing:-1px;color:#c40512;">4.8★</div><div style="margin-top:8px;font:500 12.5px/1.4 Jost;color:#6b7280;">Customer rating</div></div>
-          <div style="background:#ffffff;border:1px solid #dfe4f0;border-radius:14px;padding:26px;box-shadow:0 12px 30px -22px rgba(12,20,70,.3);" data-rev><div style="font:600 30px/1 Jost;letter-spacing:-1px;color:#c40512;">Pan-India</div><div style="margin-top:8px;font:500 12.5px/1.4 Jost;color:#6b7280;">Prompt dispatch</div></div>
-        </div>
+    <div class="why">
+      <div class="whycard">
+        <i>✓</i>
+        <h3>Wide ready stock</h3>
+        <p>Bolts, nuts, washers, socket screws, anchors and special-material fasteners — under one roof at Nagdevi.</p>
       </div>
-      <div style="margin-top:56px;">
-        <p data-plx="0.11" style="margin:0 0 16px;font:600 11px/1 Jost;letter-spacing:3px;color:#6b7280;">INDUSTRIES WE SUPPLY</p>
-        <div data-indgrid style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;">
-          <div style="position:relative;border-radius:14px;overflow:hidden;height:150px;box-shadow:0 12px 26px -18px rgba(12,20,70,.5);" data-rev><img src="assets/ind-petrochemical.jpg" alt="Chemical and petrochemical refinery" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" data-plx="0.09" data-plx-cover><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.66));"></span><span style="position:absolute;left:12px;right:12px;bottom:10px;font:600 13px/1.25 Jost;color:#ffffff;letter-spacing:.4px;">Chemical &amp; Petrochemical</span></div>
-          <div style="position:relative;border-radius:14px;overflow:hidden;height:150px;box-shadow:0 12px 26px -18px rgba(12,20,70,.5);" data-rev><img src="assets/ind-construction.jpg" alt="Construction site" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" data-plx="0.09" data-plx-cover><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.66));"></span><span style="position:absolute;left:12px;right:12px;bottom:10px;font:600 13px/1.25 Jost;color:#ffffff;letter-spacing:.4px;">Engineering &amp; Construction</span></div>
-          <div style="position:relative;border-radius:14px;overflow:hidden;height:150px;box-shadow:0 12px 26px -18px rgba(12,20,70,.5);" data-rev><img src="assets/ind-energy.jpg" alt="Wind turbines at sunset" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" data-plx="0.09" data-plx-cover><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.66));"></span><span style="position:absolute;left:12px;right:12px;bottom:10px;font:600 13px/1.25 Jost;color:#ffffff;letter-spacing:.4px;">Energy &amp; Power</span></div>
-          <div style="position:relative;border-radius:14px;overflow:hidden;height:150px;box-shadow:0 12px 26px -18px rgba(12,20,70,.5);" data-rev><img src="assets/ind-automotive.jpg" alt="Car engine close-up" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" data-plx="0.09" data-plx-cover><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.66));"></span><span style="position:absolute;left:12px;right:12px;bottom:10px;font:600 13px/1.25 Jost;color:#ffffff;letter-spacing:.4px;">Automotive</span></div>
-          <div style="position:relative;border-radius:14px;overflow:hidden;height:150px;box-shadow:0 12px 26px -18px rgba(12,20,70,.5);" data-rev><img src="assets/ind-medical.jpg" alt="Laboratory pipette and test tubes" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" data-plx="0.09" data-plx-cover><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.66));"></span><span style="position:absolute;left:12px;right:12px;bottom:10px;font:600 13px/1.25 Jost;color:#ffffff;letter-spacing:.4px;">Medical &amp; Pharma</span></div>
-          <div style="position:relative;border-radius:14px;overflow:hidden;height:150px;box-shadow:0 12px 26px -18px rgba(12,20,70,.5);" data-rev><img src="assets/ind-electrical.jpg" alt="Electricity transmission towers" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" data-plx="0.09" data-plx-cover><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.66));"></span><span style="position:absolute;left:12px;right:12px;bottom:10px;font:600 13px/1.25 Jost;color:#ffffff;letter-spacing:.4px;">Electrical</span></div>
-          <div style="position:relative;border-radius:14px;overflow:hidden;height:150px;box-shadow:0 12px 26px -18px rgba(12,20,70,.5);" data-rev><img src="assets/ind-aviation.jpg" alt="Aircraft wing in flight" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" data-plx="0.09" data-plx-cover><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.66));"></span><span style="position:absolute;left:12px;right:12px;bottom:10px;font:600 13px/1.25 Jost;color:#ffffff;letter-spacing:.4px;">Aviation</span></div>
-          <div style="position:relative;border-radius:14px;overflow:hidden;height:150px;box-shadow:0 12px 26px -18px rgba(12,20,70,.5);" data-rev><img src="assets/ind-shipping.jpg" alt="Container ship at port" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" data-plx="0.09" data-plx-cover><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.66));"></span><span style="position:absolute;left:12px;right:12px;bottom:10px;font:600 13px/1.25 Jost;color:#ffffff;letter-spacing:.4px;">Shipping</span></div>
-          <div style="position:relative;border-radius:14px;overflow:hidden;height:150px;box-shadow:0 12px 26px -18px rgba(12,20,70,.5);" data-rev><img src="assets/ind-robotics.jpg" alt="Humanoid robot" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" data-plx="0.09" data-plx-cover><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.66));"></span><span style="position:absolute;left:12px;right:12px;bottom:10px;font:600 13px/1.25 Jost;color:#ffffff;letter-spacing:.4px;">Robotics &amp; Automation</span></div>
-          <div style="position:relative;border-radius:14px;overflow:hidden;height:150px;box-shadow:0 12px 26px -18px rgba(12,20,70,.5);" data-rev><img src="assets/ind-manufacturing.jpg" alt="Welding in a factory" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" data-plx="0.09" data-plx-cover><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.66));"></span><span style="position:absolute;left:12px;right:12px;bottom:10px;font:600 13px/1.25 Jost;color:#ffffff;letter-spacing:.4px;">Manufacturing</span></div>
-        </div>
+      <div class="whycard">
+        <i>◆</i>
+        <h3>Genuine, certified quality</h3>
+        <p>Supplied to DIN, ISO, ASTM and IS standards, with documentation available on request.</p>
+      </div>
+      <div class="whycard">
+        <i>⚙</i>
+        <h3>Engineering support</h3>
+        <p>Help selecting the right grade, standard and finish for your joint — not just an order desk.</p>
+      </div>
+      <div class="whycard">
+        <i>→</i>
+        <h3>Fast quotation</h3>
+        <p>Send your requirement and get availability and pricing back quickly, with prompt dispatch.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact" data-bg="dark" data-band="dark" data-screen-label="Contact" style="position:relative;background:#0d1a6b;padding:96px 28px;">
-    <div style="max-width:1180px;margin:0 auto;">
-      <div style="display:flex;align-items:center;gap:18px;margin-bottom:64px;"><span style="flex:1;height:2px;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.32) 30%,rgba(255,255,255,.32) 70%,transparent 100%);"></span><span style="width:9px;height:9px;border-radius:50%;background:#e30613;flex:0 0 auto;box-shadow:0 0 0 5px rgba(227,6,19,.22);"></span><span style="flex:1;height:2px;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.32) 30%,rgba(255,255,255,.32) 70%,transparent 100%);"></span></div>
-      <div data-bg="card" data-rev style="background:#ffffff;border:1px solid #dfe4f0;border-radius:22px;padding:56px;box-shadow:0 24px 60px -32px rgba(12,20,70,.4);display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center;">
-        <div>
-          <p style="margin:0 0 12px;font:700 11px/1 Jost;letter-spacing:4px;color:#c40512;">GET IN TOUCH</p>
-          <h2 style="margin:0 0 16px;font:600 clamp(26px,3.6vw,42px)/1.06 Jost;letter-spacing:-1px;color:#0e1a66;">Tell us what you need.<br>We'll send a quote.</h2>
-          <p style="margin:0 0 28px;font:400 14.5px/1.7 Jost;color:#5b6270;max-width:440px;">Share the standard, grade, size and quantity — or just describe the application — and we'll confirm availability and pricing.</p>
-          <div style="display:flex;gap:14px;flex-wrap:wrap;">
-            <a href="https://mail.google.com/mail/u/0/?tf=cm&amp;to=nbtcoindia@gmail.com" target="_blank" rel="noopener" style="font:600 13px/1 Jost;letter-spacing:.6px;color:#ffffff;background:#e30613;padding:15px 26px;border-radius:8px;text-decoration:none;">Email an enquiry</a>
-            <a href="tel:+919867833131" style="font:600 13px/1 Jost;letter-spacing:.6px;color:#0e1a66;background:transparent;padding:15px 26px;border-radius:8px;border:1px solid rgba(0,0,0,.16);text-decoration:none;">Call us</a>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:20px;">
-          <div><p style="margin:0 0 5px;font:600 10px/1 Jost;letter-spacing:2px;color:#6b7280;">ADDRESS</p><p style="margin:0;font:500 14px/1.55 Jost;color:#3b4358;">107, 2nd Floor, Nagdevi Street, Nagdevi, Mumbai – 400003, Maharashtra</p></div>
-          <div><p style="margin:0 0 5px;font:600 10px/1 Jost;letter-spacing:2px;color:#6b7280;">EMAIL</p><a href="https://mail.google.com/mail/u/0/?tf=cm&amp;to=nbtcoindia@gmail.com" target="_blank" rel="noopener" style="font:500 14px/1 Jost;color:#c40512;text-decoration:none;">nbtcoindia@gmail.com</a></div>
-          <div><p style="margin:0 0 5px;font:600 10px/1 Jost;letter-spacing:2px;color:#6b7280;">HOURS</p><p style="margin:0;font:500 14px/1 Jost;color:#3b4358;">Mon–Sat · Open until 7:00 PM</p></div>
-        </div>
-      </div>
+<!-- ========================= QUOTE BAND ========================= -->
+<section class="qband" id="contact">
+  <div class="wrap">
+    <h2>Request a quote today.</h2>
+    <p>Share the standard, grade, size and quantity — or simply describe the application — and we'll confirm availability and pricing.</p>
+    <div class="btns">
+      <a class="btn btn--primary" data-enquire href="#">Email an Enquiry</a>
+      <a class="btn btn--ghost" data-tel href="#">Call Us</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer data-bg="darker" data-band="always-dark" style="position:relative;background:#0a1150;padding:40px 28px;border-top:1px solid rgba(0,0,0,.07);">
-    <div style="max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
-      <div style="display:flex;align-items:center;gap:11px;"><span class="nbt-mark" style="width:28px;height:28px;"><svg viewBox="0 0 64 64" width="28" height="28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block"><polygon points="61,32 46.5,6.89 17.5,6.89 3,32 17.5,57.11 46.5,57.11" fill="#ffffff"/><polygon points="55.5,32 43.75,11.65 20.25,11.65 8.5,32 20.25,52.35 43.75,52.35" fill="none" stroke="#e30613" stroke-width="2.2" stroke-linejoin="round"/><text x="32" y="43.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="33" fill="#0d1a6b">N</text></svg></span><span style="font:600 12px/1 Jost;letter-spacing:2px;color:#ffffff;">NEW BHARAT TRADING CO.</span></div>
-      <p style="margin:0;font:400 12px/1.5 Jost;color:rgba(255,255,255,.82);">© 1996–2026 · Industrial Fasteners &amp; Bearings · Nagdevi, Mumbai · DIN · ISO · IS · ASTM</p>
-    </div>
-  </footer>
-
+<!-- =========================== MARQUEE ========================== -->
+<div class="mq" aria-hidden="true">
+  <div class="mq__track">
+    <span>Authorised Unbrako Stockist</span><i>·</i><span>Ready Stock</span><i>·</i><span>DIN · ISO · IS · ASTM</span><i>·</i><span>High-Tensile</span><i>·</i><span>Stainless Steel</span><i>·</i><span>Socket Screws</span><i>·</i><span>Durlok® Self-Locking</span><i>·</i><span>Pan-India Dispatch</span><i>·</i><span>Since 1996</span><i>·</i><span>Nagdevi, Mumbai</span><i>·</i>
+    <span>Authorised Unbrako Stockist</span><i>·</i><span>Ready Stock</span><i>·</i><span>DIN · ISO · IS · ASTM</span><i>·</i><span>High-Tensile</span><i>·</i><span>Stainless Steel</span><i>·</i><span>Socket Screws</span><i>·</i><span>Durlok® Self-Locking</span><i>·</i><span>Pan-India Dispatch</span><i>·</i><span>Since 1996</span><i>·</i><span>Nagdevi, Mumbai</span><i>·</i>
+  </div>
 </div>
 
-<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#0d1a6b"/><g transform="translate(50 50)"><polygon points="0,-15 13,-7.5 13,7.5 0,15 -13,7.5 -13,-7.5" fill="none" stroke="#e30613" stroke-width="5"/><circle r="6" fill="none" stroke="#e30613" stroke-width="5"/></g></svg></template></x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;heroBackground&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;paper&quot;,&quot;options&quot;:[&quot;video&quot;,&quot;nebula&quot;,&quot;onyx&quot;,&quot;steel&quot;,&quot;paper&quot;,&quot;brand&quot;,&quot;vivid&quot;,&quot;ocean&quot;,&quot;ember&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;videoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a.mp4&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;paper&quot;,&quot;options&quot;:[&quot;paper&quot;,&quot;mist&quot;,&quot;sandstone&quot;,&quot;porcelain&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;bands&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;all-light&quot;,&quot;options&quot;:[&quot;alternating&quot;,&quot;all-light&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
-class Component extends DCLogic {
-  scrollRef = React.createRef();
+<div data-footer-mount></div>
 
-  renderVals() {
-    return { scrollRef: this.scrollRef };
-  }
-
-  PALETTES = {
-    paper:     { base: '#ffffff', deep: '#e9edf7', a2: '10,30,181' },
-    mist:      { base: '#eceef0', deep: '#dde2e6', a2: '47,58,166' },
-    sandstone: { base: '#f0e7d8', deep: '#e6d8c1', a2: '154,59,46' },
-    porcelain: { base: '#f6f4ef', deep: '#eae6dd', a2: '31,111,92' },
-  };
-
-  rgba(hex, a) {
-    const n = parseInt(hex.slice(1), 16);
-    return 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + a + ')';
-  }
-
-  applyTheme() {
-    if (!this.root) return;
-    const p = this.PALETTES[this.props.theme] || this.PALETTES.paper;
-    this.pal = p;
-    this.root.style.background = p.base;
-    this.root.querySelectorAll('[data-bg]').forEach((e) => {
-      const role = e.getAttribute('data-bg');
-      if (role === 'tint') e.style.background = ((this.props.heroBackground || 'video') === 'video')
-        ? 'linear-gradient(180deg,rgba(0,0,0,.22) 0%,rgba(0,0,0,.06) 42%,rgba(0,0,0,.46) 100%)'
-        : 'linear-gradient(180deg,' + this.rgba(p.base, 0) + ',' + this.rgba(p.deep, 0.3) + ' 62%,' + this.rgba(p.deep, 0.55) + ')';
-      else if (role === 'card') e.style.background = '#ffffff';
-      else e.style.background = 'transparent';
-    });
-
-    // Alternating light/dark bands
-    const alt = (this.props.bands || 'all-light') !== 'all-light';
-    this.root.querySelectorAll('[data-band]').forEach((sec) => {
-      const b = sec.getAttribute('data-band');
-      const always = b === 'always-dark';
-      const blue = sec.id === 'contact';
-      const dark = always || blue || (alt && b === 'dark');
-      sec.style.background = always ? 'linear-gradient(180deg,#e30613,#c40512)'
-        : blue ? 'linear-gradient(180deg,#0d1fb0,#0a1180)'
-        : dark ? 'linear-gradient(180deg,#0d1a6b,#0a1150)' : 'transparent';
-      sec.querySelectorAll('[data-ink="head"]').forEach((el) => { el.style.color = dark ? '#eef2fb' : '#0e1a66'; });
-      sec.querySelectorAll('[data-ink="sub"]').forEach((el) => { el.style.color = dark ? '#c9d2ea' : '#6b7280'; });
-      sec.querySelectorAll('[data-ink="eyebrow"]').forEach((el) => { el.style.color = dark ? '#ff4d57' : '#c40512'; });
-    });
-
-    const accent = this.root.querySelector('[data-meshaccent]');
-    if (accent) accent.style.background = 'radial-gradient(circle,rgba(' + p.a2 + ',.14),transparent 66%)';
-  }
-
-  componentDidUpdate() { this.applyTheme(); this.applyHero(); }
-
-  GRADSETS = {
-    onyx: ['radial-gradient(120% 80% at 50% 0%,#141414 0%,#0c0c0c 60%)','radial-gradient(120% 80% at 50% 0%,#161616 0%,#0c0c0c 60%)','radial-gradient(120% 80% at 50% 0%,#131313 0%,#0a0a0a 60%)','radial-gradient(120% 80% at 50% 0%,#151515 0%,#0c0c0c 60%)'],
-    steel: ['linear-gradient(135deg,#0e1216 0%,#2b333d 100%)','linear-gradient(135deg,#141a20 0%,#ffffff 100%)','linear-gradient(135deg,#0f1318 0%,#222a32 100%)','linear-gradient(135deg,#11161b 0%,#2f3a45 100%)'],
-    brand: ['linear-gradient(135deg,#0d1a6b 0%,#e30613 100%)','linear-gradient(135deg,#15232b 0%,#3f8e8a 100%)','linear-gradient(135deg,#2e1b10 0%,#c40512 100%)','linear-gradient(135deg,#1b2027 0%,#54677a 100%)'],
-    vivid: ['linear-gradient(135deg,#2d1b69 0%,#11998e 100%)','linear-gradient(135deg,#8e2de2 0%,#4a00e0 100%)','linear-gradient(135deg,#0f3460 0%,#e94560 100%)','linear-gradient(135deg,#134e5e 0%,#71b280 100%)'],
-    ocean: ['linear-gradient(135deg,#0b3d63 0%,#2bb6a3 100%)','linear-gradient(135deg,#13294b 0%,#3a7bd5 100%)','linear-gradient(135deg,#0f3057 0%,#00a8a8 100%)','linear-gradient(135deg,#1a2a6c 0%,#2193b0 100%)'],
-    ember: ['linear-gradient(135deg,#3a1c0a 0%,#e0671d 100%)','linear-gradient(135deg,#4a0e0e 0%,#e94560 100%)','linear-gradient(135deg,#2b1304 0%,#e30613 100%)','linear-gradient(135deg,#3d1f00 0%,#f0a040 100%)'],
-  };
-
-  applyHero() {
-    if (!this.root) return;
-    const mode = this.props.heroBackground || 'video';
-    const nebula = mode === 'nebula';
-    const video = mode === 'video';
-    this.videoMode = video;
-    this.gradMode = !!this.GRADSETS[mode] || nebula;
-    this.shaderMode = nebula;
-    const inkDark = this.gradMode || video;
-    const cont = this.root.querySelector('[data-herograd]');
-    const tint = this.root.querySelector('[data-herotint]');
-    const smoke = this.root.querySelector('[data-herosmoke]');
-    const canvas = this.root.querySelector('[data-heroshader]');
-    if (smoke) smoke.style.display = mode === 'onyx' ? 'block' : 'none';
-    if (canvas) canvas.style.display = nebula ? 'block' : 'none';
-    if (nebula && !this._shader && !this._shaderWait) this.initShader();
-    if (this._shaderResize) this._shaderResize();
-    if (video && !this._videoInited) { this._videoInited = true; this.initVideo(); }
-    const vidEl = this.root.querySelector('[data-herovideo]');
-    if (vidEl) vidEl.style.display = video ? 'block' : 'none';
-    if (video) {
-      if (cont) cont.style.display = 'none';
-      if (tint) tint.style.display = '';
-    } else if (this.gradMode) {
-      if (cont) cont.style.display = 'block';
-      if (tint) tint.style.display = 'none';
-      const base = this.root.querySelector('[data-gradbase]');
-      const layers = this.root.querySelectorAll('[data-gradlayer]');
-      if (nebula) {
-        if (base) base.style.background = '#0a0a0a';
-        layers.forEach((l) => { l.style.background = 'transparent'; });
-      } else {
-        const set = this.GRADSETS[mode];
-        layers.forEach((l, i) => { l.style.background = set[i % set.length]; });
-        if (base) base.style.background = set[0];
-      }
-    } else {
-      if (cont) cont.style.display = 'none';
-      if (tint) tint.style.display = '';
-    }
-    const g = inkDark;
-    this.root.querySelectorAll('[data-heroink="head"]').forEach((e) => {
-      if (g) {
-        e.style.backgroundImage = 'linear-gradient(180deg,#9aa0a8 0%,#eef3f7 100%)';
-        e.style.webkitBackgroundClip = 'text';
-        e.style.backgroundClip = 'text';
-        e.style.webkitTextFillColor = 'transparent';
-        e.style.color = 'transparent';
-      } else {
-        e.style.backgroundImage = 'none';
-        e.style.webkitBackgroundClip = 'initial';
-        e.style.backgroundClip = 'initial';
-        e.style.webkitTextFillColor = '#0e1a66';
-        e.style.color = '#0e1a66';
-      }
-    });
-    this.root.querySelectorAll('[data-heroink="sub"]').forEach((e) => { e.style.color = g ? 'rgba(255,255,255,.86)' : '#5b6270'; });
-    this.root.querySelectorAll('[data-heroink="eyebrow"]').forEach((e) => { e.style.color = g ? '#ffd9a8' : '#e30613'; });
-    this.root.querySelectorAll('[data-heroink="outline"]').forEach((e) => { e.style.color = g ? '#ffffff' : '#0e1a66'; e.style.borderColor = g ? 'rgba(255,255,255,.5)' : 'rgba(0,0,0,.16)'; });
-  }
-
-  initShader() {
-    const canvas = this.root.querySelector('[data-heroshader]');
-    if (!canvas) return;
-    const vert = [
-      'uniform float time;',
-      'uniform float intensity;',
-      'varying vec2 vUv;',
-      'void main(){',
-      '  vUv = uv;',
-      '  vec3 pos = position;',
-      '  pos.y += sin(pos.x * 6.0 + time) * 0.06 * intensity;',
-      '  pos.x += cos(pos.y * 5.0 + time * 1.5) * 0.04 * intensity;',
-      '  gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);',
-      '}'
-    ].join('\n');
-    const frag = [
-      'uniform float time;',
-      'uniform float intensity;',
-      'uniform float aspect;',
-      'uniform vec3 color1;',
-      'uniform vec3 color2;',
-      'varying vec2 vUv;',
-      'void main(){',
-      '  vec2 uv = vUv;',
-      '  float noise = sin(uv.x * 12.0 + time) * cos(uv.y * 9.0 + time * 0.8);',
-      '  noise += sin(uv.x * 22.0 - time * 1.6) * cos(uv.y * 16.0 + time * 1.1) * 0.5;',
-      '  noise += sin(uv.y * 30.0 + time * 0.6) * 0.3;',
-      '  vec3 color = mix(color1, color2, noise * 0.5 + 0.5);',
-      '  color = mix(color, vec3(1.0), pow(abs(noise), 2.0) * intensity * 0.6);',
-      '  vec2 gp = uv - 0.5; gp.x *= aspect;',
-      '  float glow = 1.0 - length(gp) * 1.35;',
-      '  glow = clamp(glow, 0.0, 1.0);',
-      '  glow = pow(glow, 1.5);',
-      '  gl_FragColor = vec4(color * glow, glow * 0.9);',
-      '}'
-    ].join('\n');
-    const boot = () => {
-      if (!window.THREE) { this._shaderWait = setTimeout(boot, 120); return; }
-      const T = window.THREE;
-      const host = canvas.parentElement;
-      const renderer = new T.WebGLRenderer({ canvas, alpha: true, antialias: true, preserveDrawingBuffer: true });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-      const scene = new T.Scene();
-      const camera = new T.OrthographicCamera(-1, 1, 1, -1, 0, 10);
-      camera.position.z = 1;
-      const uniforms = {
-        time: { value: 0 },
-        intensity: { value: 1.0 },
-        aspect: { value: 1 },
-        color1: { value: new T.Color('#e30613') },
-        color2: { value: new T.Color('#ffffff') },
-      };
-      const mat = new T.ShaderMaterial({ uniforms, vertexShader: vert, fragmentShader: frag, transparent: true, side: T.DoubleSide });
-      const mesh = new T.Mesh(new T.PlaneGeometry(2.6, 2.6, 64, 64), mat);
-      scene.add(mesh);
-      const resize = () => {
-        const w = host.clientWidth || 1, h = host.clientHeight || 1;
-        renderer.setSize(w, h, false);
-        uniforms.aspect.value = w / h;
-      };
-      resize();
-      this._shaderResize = resize;
-      window.addEventListener('resize', resize);
-      this._shader = { renderer, scene, camera, uniforms };
-    };
-    boot();
-  }
-
-  initVideo() {
-    const v = this.root.querySelector('[data-herovideo]');
-    const src = (this.props.videoUrl || 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a.mp4').trim();
-    if (!v || !src) return;
-    const tint = this.root.querySelector('[data-herotint]');
-    v.muted = true;
-    v.loop = true;
-    v.setAttribute('muted', '');
-    v.setAttribute('loop', '');
-    const reveal = () => {
-      v.style.opacity = '1';
-      v.muted = true;
-      v.loop = true;
-      v.play().catch(() => {});
-    };
-    v.addEventListener('canplay', reveal, { once: true });
-    v.addEventListener('ended', () => { v.currentTime = 0; v.play().catch(() => {}); });
-    const isHls = /\.m3u8(\?|$)/i.test(src);
-    if (isHls && !v.canPlayType('application/vnd.apple.mpegurl') && window.Hls && window.Hls.isSupported()) {
-      const hls = new window.Hls({ autoStartLoad: true, capLevelToPlayerSize: true });
-      hls.loadSource(src);
-      hls.attachMedia(v);
-      hls.on(window.Hls.Events.MANIFEST_PARSED, reveal);
-      this._hls = hls;
-    } else {
-      v.src = src;
-      v.addEventListener('loadeddata', reveal, { once: true });
-    }
-  }
-
-  formPos(f, i, c) {
-    const N = c.N;
-    if (f === 'line') {
-      return { x: i * c.lineSp - (N * c.lineSp) / 2 + c.lineSp / 2, y: 0, r: this.baseRot[i] * 0.35, s: c.ringScale * 0.9 };
-    }
-    if (f === 'swirl') {
-      const u = (i + 1) / N;
-      const a = u * 700 + c.spin * 1.7;
-      const rad = a * Math.PI / 180;
-      const rr = 0.2 + 0.8 * u;
-      return { x: Math.cos(rad) * c.rx * rr, y: Math.sin(rad) * c.ry * rr, r: a + 90, s: c.ringScale * (0.65 + 0.35 * u) };
-    }
-    const a = (i / N) * 360 + c.spin;
-    const rad = a * Math.PI / 180;
-    return { x: Math.cos(rad) * c.rx, y: Math.sin(rad) * c.ry, r: this.baseRot[i] + c.spin * 0.4, s: c.ringScale };
-  }
-
-  initMarquee() {
-    this.mq = this.root.querySelector('[data-marquee]');
-    if (!this.mq) return;
-    this._mr1 = this.mq.querySelector('[data-marquee-row="1"]');
-    this._mr2 = this.mq.querySelector('[data-marquee-row="2"]');
-    const items = [
-      ['Socket Head Cap Screw','assets/bolt.png'],['Hex Nut · ISO 4032','assets/nut.png'],
-      ['10.9 Hex Head Bolt','assets/bolt.png'],['Spring Washer','assets/nut.png'],
-      ['Countersunk Socket','assets/bolt.png'],['Nylock Nut','assets/nut.png'],
-      ['Socket Set Screw','assets/bolt.png'],['Button Head Screw','assets/bolt.png'],
-      ['Shoulder Screw','assets/bolt.png'],['Stud Bolt B7','assets/nut.png'],
-      ['Structural Bolt','assets/bolt.png'],['Threaded Rod','assets/bolt.png'],
-      ['Durlok Bolt','assets/nut.png'],
-    ];
-    const tile = (it) => '<a href="products.html" style="flex:0 0 auto;width:300px;height:188px;border-radius:18px;overflow:hidden;position:relative;text-decoration:none;background:radial-gradient(120% 120% at 50% 12%,#ffffff,#e8edf8);display:flex;align-items:center;justify-content:center;border:1px solid #dbe1ef;box-shadow:0 14px 30px -20px rgba(12,20,70,.4);"><img src="' + it[1] + '" alt="" style="width:96px;height:96px;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(12,20,70,.28));"><span style="position:absolute;left:16px;bottom:14px;font:600 12px/1 Jost;letter-spacing:1px;color:#3b4358;">' + it[0] + '</span></a>';
-    const a = items.slice(0, 7), b = items.slice(6);
-    const row = (arr) => arr.concat(arr, arr).map(tile).join('');
-    if (this._mr1) this._mr1.innerHTML = row(a);
-    if (this._mr2) this._mr2.innerHTML = row(b);
-    this._mw1 = this._mr1 ? this._mr1.scrollWidth / 3 : 1;
-    this._mw2 = this._mr2 ? this._mr2.scrollWidth / 3 : 1;
-  }
-
-  tickMarquee(st) {
-    if (!this.mq) return;
-    this._mqOff = (this._mqOff || 0) + 0.55;
-    const off = this._mqOff;
-    if (this._mr1 && this._mw1) this._mr1.style.transform = 'translateX(' + (-(((off % this._mw1) + this._mw1) % this._mw1)).toFixed(1) + 'px)';
-    if (this._mr2 && this._mw2) this._mr2.style.transform = 'translateX(' + (((off % this._mw2) + this._mw2) % this._mw2 - this._mw2).toFixed(1) + 'px)';
-  }
-
-  initAnimText() {
-    this.at = this.root.querySelector('[data-animtext]');
-    if (!this.at) return;
-    const txt = this.at.textContent;
-    this.at.textContent = '';
-    this.atChars = [];
-    for (const ch of txt) {
-      const s = document.createElement('span');
-      s.textContent = ch;
-      s.style.opacity = '0.18';
-      s.style.transition = 'opacity .15s linear';
-      this.at.appendChild(s);
-      this.atChars.push(s);
-    }
-  }
-
-  tickAnimText() {
-    if (!this.at || !this.atChars) return;
-    const r = this.at.getBoundingClientRect();
-    const vh = this.root.clientHeight;
-    const start = vh * 0.85, end = vh * 0.35;
-    let p = (start - r.top) / (start - end + r.height);
-    p = Math.min(Math.max(p, 0), 1);
-    const lit = Math.round(p * this.atChars.length);
-    for (let i = 0; i < this.atChars.length; i++) this.atChars[i].style.opacity = i < lit ? '1' : '0.18';
-  }
-
-  initSticky() {
-    this.stackCards = Array.from(this.root.querySelectorAll('[data-stackcard]'));
-  }
-
-  initGallery() {
-    this.galRotEl = this.root.querySelector('[data-gallery-rot]');
-    this.galStage = this.root.querySelector('[data-gallery-stage]');
-    this.gcards = Array.from(this.root.querySelectorAll('[data-gcard]'));
-    this.galN = this.gcards.length;
-    this.galAuto = 0;
-  }
-
-  tickGallery() {
-    if (!this.galRotEl || !this.galN) return;
-    const vh = this.root.clientHeight;
-    const rect = this.galStage.getBoundingClientRect();
-    if (rect.bottom < -200 || rect.top > vh + 200) { this.galAuto += 0.015; }
-    else { this.galAuto += 0.05; }
-    let p = (vh - rect.top) / (vh + rect.height);
-    p = Math.min(Math.max(p, 0), 1);
-    const total = this.galAuto + p * 170;
-    this.galRotEl.style.transform = 'rotateY(' + total.toFixed(2) + 'deg)';
-    const ang = 360 / this.galN;
-    const w = this.root.clientWidth;
-    const radius = w < 480 ? 220 : (w < 700 ? 300 : (w < 1000 ? 400 : 470));
-    for (let i = 0; i < this.galN; i++) {
-      const world = ((i * ang + total) % 360 + 360) % 360;
-      const norm = world > 180 ? 360 - world : world;
-      const front = 1 - norm / 180;
-      const el = this.gcards[i];
-      el.style.transform = 'rotateY(' + (i * ang).toFixed(2) + 'deg) translateZ(' + radius + 'px) scale(' + (0.82 + front * 0.18).toFixed(3) + ')';
-      el.style.opacity = Math.max(0.26, front).toFixed(3);
-      el.style.zIndex = String(400 - Math.round(norm));
-    }
-  }
-
-  initCats() {
-    this.catCards = Array.from(this.root.querySelectorAll('[data-catcard]'));
-    this.catState = this.catCards.map(() => ({ revealed: false }));
-    const rest = 'perspective(820px) translateY(0px) rotateX(0deg) rotateY(0deg) scale(1)';
-    this.catCards.forEach((card, i) => {
-      const st = this.catState[i];
-      const spot = card.querySelector('[data-spot]');
-      const arrow = card.querySelector('[data-catarrow]');
-      const img = card.querySelector('[data-catimg] img');
-      card.addEventListener('mouseenter', () => {
-        if (!st.revealed) return;
-        card.style.transition = 'transform .12s ease-out, box-shadow .3s, border-color .3s';
-        card.style.borderColor = '#e30613';
-        card.style.boxShadow = '0 36px 62px -28px rgba(12,20,70,.5)';
-        card.style.zIndex = '3';
-        if (spot) spot.style.opacity = '1';
-        if (arrow) { arrow.style.opacity = '1'; arrow.style.transform = 'translateX(0)'; }
-      });
-      card.addEventListener('mousemove', (e) => {
-        if (!st.revealed) return;
-        const r = card.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width;
-        const py = (e.clientY - r.top) / r.height;
-        const ry = (px - 0.5) * 11;
-        const rx = (0.5 - py) * 11;
-        card.style.transform = 'perspective(820px) translateY(-6px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg) scale(1.02)';
-        if (spot) spot.style.background = 'radial-gradient(280px circle at ' + (px * 100).toFixed(1) + '% ' + (py * 100).toFixed(1) + '%,rgba(227,6,19,.20),transparent 62%)';
-        if (img) img.style.transform = 'translate(' + ((px - 0.5) * 16).toFixed(1) + 'px,' + ((py - 0.5) * 11).toFixed(1) + 'px) scale(1.07)';
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transition = 'transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .4s, border-color .3s';
-        card.style.transform = rest;
-        card.style.borderColor = '#dfe4f0';
-        card.style.boxShadow = '0 16px 36px -22px rgba(12,20,70,.42)';
-        card.style.zIndex = '';
-        if (spot) spot.style.opacity = '0';
-        if (arrow) { arrow.style.opacity = '0'; arrow.style.transform = 'translateX(-8px)'; }
-        if (img) img.style.transform = 'none';
-      });
-    });
-  }
-
-  tickCats() {
-    if (!this.catCards || !this.catCards.length) return;
-    const vh = this.root.clientHeight;
-    for (let i = 0; i < this.catCards.length; i++) {
-      const st = this.catState[i];
-      if (st.revealed) continue;
-      const card = this.catCards[i];
-      const r = card.getBoundingClientRect();
-      if (r.top < vh * 0.88 && r.bottom > 0) {
-        st.revealed = true;
-        card.style.transitionDelay = ((i % 3) * 0.09).toFixed(2) + 's';
-        card.style.transition = 'opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1)';
-        card.style.opacity = '1';
-        card.style.transform = 'perspective(820px) translateY(0px) rotateX(0deg) rotateY(0deg) scale(1)';
-        setTimeout(() => { card.style.transitionDelay = '0s'; }, 900);
-      }
-    }
-  }
-
-  tickSticky() {
-    if (!this.stackCards || !this.stackCards.length) return;
-    const vh = this.root.clientHeight;
-    const n = this.stackCards.length;
-    for (let i = 0; i < n; i++) {
-      const next = this.stackCards[i + 1];
-      let scale = 1;
-      if (next) {
-        const nr = next.getBoundingClientRect();
-        const stickyTop = 92 + i * 26;
-        const denom = (vh - stickyTop) || 1;
-        let pr = (vh - nr.top) / denom;
-        pr = Math.min(Math.max(pr, 0), 1);
-        const target = 1 - (n - 1 - i) * 0.04;
-        scale = 1 + (target - 1) * pr;
-      }
-      const card = this.stackCards[i].firstElementChild || this.stackCards[i];
-      card.style.transformOrigin = 'top center';
-      card.style.transform = 'scale(' + scale.toFixed(4) + ')';
-    }
-  }
-
-  initReveals() {
-    this.revEls = Array.from(this.root.querySelectorAll('[data-rev]'));
-    this.revEls.forEach((el) => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(32px)';
-      el.style.willChange = 'opacity,transform';
-      const raw = el.getAttribute('data-rev');
-      let delay = parseFloat(raw);
-      if (isNaN(delay)) {
-        const sibs = Array.from(el.parentNode.children).filter((c) => c.hasAttribute('data-rev'));
-        delay = Math.min(sibs.indexOf(el), 9) * 0.07;
-      }
-      el.__revDelay = delay || 0;
-      el.__rev = false;
-    });
-  }
-
-  tickReveals() {
-    if (!this.revEls || !this.revEls.length) return;
-    const vh = this.root.clientHeight;
-    for (const el of this.revEls) {
-      if (el.__rev) continue;
-      const r = el.getBoundingClientRect();
-      if (r.top < vh * 0.86 && r.bottom > 0) {
-        el.__rev = true;
-        el.style.transition = 'opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)';
-        el.style.transitionDelay = el.__revDelay.toFixed(2) + 's';
-        el.style.opacity = '1';
-        el.style.transform = 'none';
-        setTimeout(() => { el.style.willChange = 'auto'; }, 1100);
-      }
-    }
-  }
-
-  initPlx() {
-    this.plxEls = Array.from(this.root.querySelectorAll('[data-plx]')).map((el) => {
-      const cover = el.hasAttribute('data-plx-cover');
-      el.style.willChange = 'transform';
-      if (cover) el.style.transform = 'scale(1.18)';
-      return { el, s: parseFloat(el.getAttribute('data-plx')) || 0.06, cy: 0, cover };
-    });
-  }
-
-  tickPlx() {
-    if (!this.plxEls || !this.plxEls.length) return;
-    const vh = this.root.clientHeight;
-    for (const it of this.plxEls) {
-      const r = it.el.getBoundingClientRect();
-      if (r.bottom < -260 || r.top > vh + 260) continue;
-      const d = (r.top + r.height / 2) - vh / 2;
-      const t = -d * it.s;
-      it.cy += (t - it.cy) * 0.1;
-      it.el.style.transform = 'translate3d(0,' + it.cy.toFixed(2) + 'px,0)' + (it.cover ? ' scale(1.18)' : '');
-    }
-  }
-
-  componentDidMount() {
-    const root = this.scrollRef.current;
-    if (!root) return;
-    this.root = root;
-    this.heroEl = root.querySelector('[data-hero]');
-    this.heroContent = root.querySelector('[data-herocontent]');
-    this.nav = root.querySelector('[data-nav]');
-    this.cards = Array.from(root.querySelectorAll('[data-card]'));
-    this.N = this.cards.length;
-    this.cur = this.cards.map(() => ({ x: 0, y: 0, r: 0, s: 0.55, o: 0 }));
-    this.scatter = this.cards.map(() => ({
-      x: (Math.random() - 0.5) * 1700,
-      y: (Math.random() - 0.5) * 1100,
-      r: (Math.random() - 0.5) * 220,
-    }));
-    this.baseRot = this.cards.map(() => (Math.random() - 0.5) * 46);
-    this.mouseX = 0; this.sMouse = 0; this.idle = 0;
-    this.phase = 'scatter';
-
-    // Smooth-scroll nav jumps (no scrollIntoView)
-    this._jump = (e) => {
-      const back = e.target.closest('[data-back]');
-      if (back) { e.preventDefault(); if (window.history.length > 1) window.history.back(); else window.location.href = 'index.html'; return; }
-      const a = e.target.closest('[data-jump]');
-      if (!a) return;
-      e.preventDefault();
-      const key = a.getAttribute('data-jump');
-      if (key === 'top') { root.scrollTo({ top: 0, behavior: 'smooth' }); return; }
-      const sec = root.querySelector('#' + key);
-      if (sec) root.scrollTo({ top: sec.offsetTop - 64, behavior: 'smooth' });
-    };
-    root.addEventListener('click', this._jump);
-
-    // Sliding-cursor nav pill
-    const pill = root.querySelector('[data-navpill]');
-    if (pill) {
-      const cursor = pill.querySelector('[data-cursor]');
-      const tabs = Array.from(pill.querySelectorAll('[data-tab]'));
-      this.tabs = tabs;
-      const move = (tab) => {
-        cursor.style.left = tab.offsetLeft + 'px';
-        cursor.style.width = tab.offsetWidth + 'px';
-        cursor.style.opacity = '1';
-        tabs.forEach((t) => { t.style.color = this.tabIdle || '#3b4358'; });
-        tab.style.color = '#0d1a6b';
-      };
-      tabs.forEach((tab) => tab.addEventListener('mouseenter', () => { this._hoverTab = tab; move(tab); }));
-      this._pillLeave = () => {
-        this._hoverTab = null;
-        cursor.style.opacity = '0';
-        tabs.forEach((t) => { t.style.color = this.tabIdle || '#3b4358'; });
-      };
-      pill.addEventListener('mouseleave', this._pillLeave);
-      this._pill = pill;
-    }
-    this.navink = root.querySelector('[data-navink]');
-    this.navlinks = Array.from(root.querySelectorAll('[data-navlink]'));
-    this.navlinks.forEach((l) => {
-      l.addEventListener('mouseenter', () => { this._navHover = l; l.style.color = '#e30613'; });
-      l.addEventListener('mouseleave', () => { this._navHover = null; l.style.color = this._navBase || '#0e1a66'; });
-    });
-
-    this._mm = (e) => {
-      const r = this.heroEl.getBoundingClientRect();
-      const nx = ((e.clientX - r.left) / r.width) * 2 - 1;
-      this.mouseX = nx * 70;
-    };
-    this.heroEl.addEventListener('mousemove', this._mm);
-
-    this.seq = ['circle', 'line', 'circle', 'swirl'];
-    this._t1 = setTimeout(() => { this.phase = 'line'; }, 600);
-    this._t2 = setTimeout(() => { this.phase = 'cycle'; }, 2300);
-
-    this.applyTheme();
-    this.applyHero();
-    this.initMarquee();
-    this.initAnimText();
-    this.initSticky();
-    this.initCats();
-    this.initGallery();
-    this.initReveals();
-    this.initPlx();
-
-    this._run = true;
-    this._loop = this._loop.bind(this);
-    this._raf = requestAnimationFrame(this._loop);
-  }
-
-  _loop() {
-    if (!this._run) return;
-    const lerp = (a, b, t) => a * (1 - t) + b * t;
-    const clamp = (v, a, b) => Math.min(Math.max(v, a), b);
-
-    const st = this.root.scrollTop;
-    const w = this.root.clientWidth, h = this.root.clientHeight;
-    const travel = Math.max(1, this.heroEl.offsetHeight - h);
-    const prog = clamp(st / travel, 0, 1);
-
-    const N = this.N;
-    const minDim = Math.min(w, h);
-    const navPad = 96, botPad = 52;
-    const cyOff = (navPad + (h - botPad)) / 2 - h / 2;
-    const fitR = (h - navPad - botPad) / 2 - 8;
-    const circleR = Math.min(minDim * 0.46, fitR, 350);
-    const ringScale = w < 768 ? 0.8 : 1;
-    const lineSp = Math.min((w * 0.94) / N, 88);
-    const smooth = (x) => x * x * (3 - 2 * x);
-
-    if (this.heroContent) {
-      this.heroContent.style.transform = 'translate(-50%, calc(-50% + ' + cyOff.toFixed(1) + 'px))';
-    }
-
-    // Scroll-driven sequence: circle -> line -> circle -> swirl
-    const stages = this.seq;
-    const segs = stages.length - 1;
-    const sf = clamp(prog, 0, 0.999) * segs;
-    const seg = Math.floor(sf);
-    const lt = smooth(sf - seg);
-    const spin = prog * 320;
-    const ry = circleR;
-    const rx = circleR;
-    const ctx = { N, circleR, rx, ry, ringScale, lineSp, spin };
-
-    for (let i = 0; i < N; i++) {
-      let t;
-      if (this.phase === 'scatter') {
-        const s = this.scatter[i];
-        t = { x: s.x, y: s.y, r: s.r, s: 0.55, o: 0 };
-      } else if (this.phase === 'line') {
-        t = { x: i * 76 - (N * 76) / 2 + 38, y: cyOff, r: this.baseRot[i], s: 0.95, o: 1 };
-      } else {
-        const A = this.formPos(stages[seg], i, ctx);
-        const B = this.formPos(stages[seg + 1], i, ctx);
-        t = {
-          x: lerp(A.x, B.x, lt),
-          y: lerp(A.y, B.y, lt) + cyOff,
-          r: lerp(A.r, B.r, lt),
-          s: lerp(A.s, B.s, lt),
-          o: 1,
-        };
-      }
-      const cu = this.cur[i], k = 0.12;
-      cu.x = lerp(cu.x, t.x, k); cu.y = lerp(cu.y, t.y, k);
-      cu.r = lerp(cu.r, t.r, k); cu.s = lerp(cu.s, t.s, k); cu.o = lerp(cu.o, t.o, k);
-      const el = this.cards[i];
-      el.style.transform = 'translate(' + cu.x.toFixed(2) + 'px,' + cu.y.toFixed(2) + 'px) rotate(' + cu.r.toFixed(2) + 'deg) scale(' + cu.s.toFixed(3) + ')';
-      el.style.opacity = cu.o.toFixed(3);
-    }
-
-    if (this.nav && this.pal) {
-      const sc = true;
-      const grad = false;
-      const ink = grad ? '#ffffff' : '#0e1a66';
-      if (this.navink) this.navink.style.color = ink;
-      const linkBase = grad ? 'rgba(255,255,255,.85)' : '#0e1a66';
-      if (linkBase !== this._navBase) {
-        this._navBase = linkBase;
-        if (this.navlinks) this.navlinks.forEach((l) => { if (l !== this._navHover) l.style.color = linkBase; });
-      }
-      this.tabIdle = grad ? 'rgba(255,255,255,.82)' : '#3b4358';
-      if (this._pill) {
-        this._pill.style.background = grad ? 'rgba(255,255,255,.12)' : 'rgba(0,0,0,.04)';
-        this._pill.style.borderColor = grad ? 'rgba(255,255,255,.3)' : 'rgba(0,0,0,.1)';
-      }
-      if (this.tabs && !this._hoverTab) this.tabs.forEach((t) => { t.style.color = this.tabIdle; });
-      this.nav.style.background = sc ? this.rgba(this.pal.base, 0.86) : 'transparent';
-      this.nav.style.borderBottomColor = sc ? 'rgba(0,0,0,.08)' : 'transparent';
-      this.nav.style.backdropFilter = sc ? 'blur(10px)' : 'none';
-      this.nav.style.webkitBackdropFilter = sc ? 'blur(10px)' : 'none';
-    }
-
-    if (this.shaderMode && this._shader) {
-      try {
-        const cv = this._shader.renderer.domElement;
-        const host = cv.parentElement;
-        const dpr = Math.min(window.devicePixelRatio || 1, 2);
-        const hw = host.clientWidth || 0, hh = host.clientHeight || 0;
-        if (hw > 1 && hh > 1 && (Math.abs(cv.width - hw * dpr) > 1 || Math.abs(cv.height - hh * dpr) > 1)) {
-          this._shader.renderer.setSize(hw, hh, false);
-          this._shader.uniforms.aspect.value = hw / hh;
-        }
-        const t = performance.now() / 1000;
-        this._shader.uniforms.time.value = t;
-        this._shader.uniforms.intensity.value = 1.0 + Math.sin(t * 2) * 0.3;
-        this._shader.renderer.render(this._shader.scene, this._shader.camera);
-      } catch (err) {
-        if (!this._shaderErrLogged) { console.log('SHADER_RENDER_ERR', err && err.message); this._shaderErrLogged = true; }
-        this._shader = null;
-      }
-    }
-
-    this.tickMarquee(st);
-    this.tickAnimText();
-    this.tickSticky();
-    this.tickCats();
-    this.tickGallery();
-    this.tickReveals();
-    this.tickPlx();
-
-    this._raf = requestAnimationFrame(this._loop);
-  }
-
-  componentWillUnmount() {
-    this._run = false;
-    cancelAnimationFrame(this._raf);
-    clearTimeout(this._t1); clearTimeout(this._t2); clearInterval(this._cycle);
-    if (this.root) this.root.removeEventListener('click', this._jump);
-    if (this._pill && this._pillLeave) this._pill.removeEventListener('mouseleave', this._pillLeave);
-    if (this._hls) this._hls.destroy();
-    if (this.heroEl) this.heroEl.removeEventListener('mousemove', this._mm);
-    clearTimeout(this._shaderWait);
-    if (this._shaderResize) window.removeEventListener('resize', this._shaderResize);
-    if (this._shader && this._shader.renderer) this._shader.renderer.dispose();
-  }
-}
-</script>
-<script src="./nbt-enhance.js"></script>
+<script src="catalog.js"></script>
+<script src="site.js"></script>
+<script src="nbt-enhance.js"></script>
+<script src="bolt3d.js"></script>
 </body>
 </html>
