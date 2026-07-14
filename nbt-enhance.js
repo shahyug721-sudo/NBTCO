@@ -300,13 +300,8 @@
     launch.innerHTML = WA_ICON + '<span>Get a Quote</span>';
     document.body.appendChild(launch);
 
-    // Inner pages inject their own WhatsApp FAB stack (bottom-right) via site.js.
-    // Sit above it so the two don't overlap.
-    function adjustLaunch() {
-      if (document.querySelector(".fab-stack")) launch.style.bottom = "150px";
-    }
-    adjustLaunch();
-    setTimeout(adjustLaunch, 800);
+    // The launcher owns the bottom-right corner. (The old WhatsApp FAB that
+    // used to sit here has been removed; back-to-top is stacked above it.)
 
     // Modal
     var modal = el("div", { id: "nbt-modal", role: "dialog", "aria-modal": "true", "aria-label": "Fastener Finder" });

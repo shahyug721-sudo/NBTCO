@@ -15,15 +15,10 @@
 
 <!-- ============================ HERO ============================ -->
 <header class="hero">
-  <div class="hero__bolts" aria-hidden="true">
-    <img src="assets/bolt.png" alt="" style="left:4%;top:13%;--s:78px;--d:16s;--r:-12deg;--dx:18px;--dy:-26px;">
-    <img src="assets/nut.png"  alt="" style="right:6%;top:9%;--s:64px;--d:19s;--r:16deg;--delay:-3s;--dx:-14px;--dy:-20px;">
-    <img src="assets/bolt.png" alt="" style="left:10%;bottom:15%;--s:56px;--d:14s;--r:22deg;--delay:-6s;--dx:16px;--dy:22px;">
-    <img src="assets/nut.png"  alt="" style="right:8%;bottom:11%;--s:82px;--d:21s;--r:-18deg;--delay:-2s;--dx:-18px;--dy:18px;">
-    <img src="assets/nut.png"  alt="" style="left:2%;top:58%;--s:40px;--d:18s;--r:8deg;--delay:-10s;--dx:12px;--dy:-16px;">
-    <img src="assets/bolt.png" alt="" style="right:2%;top:40%;--s:42px;--d:20s;--r:-8deg;--delay:-7s;--dx:-12px;--dy:16px;">
-    <img src="assets/bolt.png" alt="" style="left:20%;bottom:4%;--s:36px;--d:17s;--r:30deg;--delay:-8s;--dx:14px;--dy:-14px;">
-    <img src="assets/nut.png"  alt="" style="right:19%;top:4%;--s:38px;--d:15s;--r:-24deg;--delay:-4s;--dx:-10px;--dy:18px;">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="orb--1"></span>
+    <span class="orb--2"></span>
+    <span class="orb--3"></span>
   </div>
 
   <div class="wrap">
@@ -37,6 +32,8 @@
 
     <!-- 3D bolt centrepiece — desktop only, mounted by bolt3d.js -->
     <div class="hero__3d" id="nbt-bolt3d" aria-hidden="true"></div>
+    <!-- static bolt for phones/tablets (where the 3D canvas doesn't run) -->
+    <img class="hero__img" src="assets/bolt.png" alt="" aria-hidden="true">
   </div>
 </header>
 

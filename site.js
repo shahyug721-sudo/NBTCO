@@ -131,7 +131,6 @@
     return '' +
       '<div class="fab-stack">' +
         '<button class="fab fab--top" data-top aria-label="Back to top">' + IC.up + '</button>' +
-        '<a class="fab fab--wa" href="' + waHref(null) + '" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">' + IC.wa + '</a>' +
       '</div>';
   }
 

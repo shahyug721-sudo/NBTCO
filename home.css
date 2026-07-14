@@ -27,18 +27,29 @@
 .hero .btns{justify-content:center;margin:34px 0 0;}
 .hero .btn{padding:16px 30px;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;border-radius:8px;}
 
-/* ---- floating nuts & bolts -------------------------------------------- */
-.hero__bolts{position:absolute;inset:0;z-index:1;pointer-events:none;}
-.hero__bolts img{
-  position:absolute;width:var(--s,72px);height:var(--s,72px);object-fit:contain;opacity:.92;
-  filter:drop-shadow(0 14px 20px rgba(12,20,70,.3));
-  animation:nbtFloat var(--d,15s) ease-in-out var(--delay,0s) infinite;
-  will-change:transform;
+/* ---- soft drifting brand glows (behind everything, never touches text) -- */
+.hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.hero__bg span{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform;}
+.orb--1{width:46vw;height:46vw;max-width:520px;max-height:520px;top:-14%;left:-10%;
+  background:radial-gradient(circle,rgba(227,6,19,.28),transparent 68%);
+  animation:orbA 26s ease-in-out infinite;}
+.orb--2{width:54vw;height:54vw;max-width:620px;max-height:620px;bottom:-20%;right:-12%;
+  background:radial-gradient(circle,rgba(10,30,181,.26),transparent 68%);
+  animation:orbB 32s ease-in-out infinite;}
+.orb--3{width:38vw;height:38vw;max-width:440px;max-height:440px;top:26%;right:8%;
+  background:radial-gradient(circle,rgba(10,30,181,.16),transparent 68%);
+  animation:orbC 29s ease-in-out infinite;}
+@keyframes orbA{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(10%,8%) scale(1.16);}}
+@keyframes orbB{0%,100%{transform:translate(0,0) scale(1.06);}50%{transform:translate(-9%,-7%) scale(1);}}
+@keyframes orbC{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-8%,7%) scale(1.12);}}
+
+/* ---- static hero bolt (shown where the 3D bolt isn't) ------------------ */
+.hero__img{
+  display:none;position:relative;z-index:2;
+  width:min(72%,300px);margin:28px auto -6px;
+  filter:drop-shadow(0 22px 30px rgba(12,20,70,.32));
 }
-@keyframes nbtFloat{
-  0%,100%{transform:translate3d(0,0,0) rotate(var(--r,0deg));}
-  50%{transform:translate3d(var(--dx,16px),var(--dy,-24px),0) rotate(calc(var(--r,0deg) + 24deg));}
-}
+@media (max-width:900px){.hero__img{display:block;}}
 
 /* ---- 3D hero bolt (desktop only; revealed by bolt3d.js) ---------------- */
 .hero__3d{
@@ -120,11 +131,8 @@
   .why{grid-template-columns:1fr;}
   .grid--cat{grid-template-columns:1fr;}
   .band .wrap{justify-content:center;text-align:center;}
-  /* keep only a few floating bolts on a small screen */
-  .hero__bolts img:nth-of-type(n+5){display:none;}
-  .hero__bolts img{opacity:.5;}
 }
 
 @media (prefers-reduced-motion: reduce){
-  .hero__bolts img,.mq__track{animation:none!important;}
+  .hero__bg span,.mq__track{animation:none!important;}
 }

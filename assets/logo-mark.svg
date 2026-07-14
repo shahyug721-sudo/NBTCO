@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="New Bharat Trading Company">
+  <defs>
+    <linearGradient id="nbtHex" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16299c"/>
+      <stop offset="1" stop-color="#0a1352"/>
+    </linearGradient>
+  </defs>
+  <polygon points="61,32 46.5,6.89 17.5,6.89 3,32 17.5,57.11 46.5,57.11" fill="url(#nbtHex)" stroke="#081048" stroke-width="0.8" stroke-linejoin="round"/>
+  <polygon points="46.5,6.89 17.5,6.89 3,32 61,32" fill="#ffffff" opacity="0.06"/>
+  <polygon points="55.5,32 43.75,11.65 20.25,11.65 8.5,32 20.25,52.35 43.75,52.35" fill="none" stroke="#e30613" stroke-width="2.2" stroke-linejoin="round"/>
+  <text x="32" y="43.2" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="33" fill="#ffffff">N</text>
+</svg>

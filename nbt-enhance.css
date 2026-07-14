@@ -64,6 +64,10 @@
 }
 @media (max-width:600px){#nbt-thread{width:2px;}#nbt-thread-head{display:none;}}
 
+/* ---- Back-to-top sits ABOVE the Get-a-Quote launcher ------------------- */
+.fab-stack{bottom:86px!important;}
+@media (max-width:600px){.fab-stack{bottom:74px!important;}}
+
 /* ---- Floating "Get a Quote" launcher ----------------------------------- */
 #nbt-launch{
   position:fixed;right:22px;bottom:22px;z-index:99991;
