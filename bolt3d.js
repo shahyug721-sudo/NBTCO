@@ -10,8 +10,9 @@
   if (!host) return;
 
   // ---- guards ------------------------------------------------------------
+  // Runs on phone AND desktop; only skipped for reduced-motion or no-WebGL,
+  // in which case the static hero bolt image is shown instead.
   if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  if (window.innerWidth < 901) return;                 // phones/tablets stay fast
   if (!hasWebGL()) return;
 
   function hasWebGL() {
@@ -47,8 +48,13 @@
       renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     } catch (e) { host.classList.remove("is-on"); return; }
 
+    // 3D bolt is live — hide the static fallback image.
+    var staticImg = document.querySelector(".hero__img");
+    if (staticImg) staticImg.style.display = "none";
+
     renderer.setSize(w, h);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    // lower pixel ratio on phones to keep it smooth on modest GPUs
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, window.innerWidth < 700 ? 1.5 : 2));
     renderer.setClearColor(0x000000, 0);
     try {
       if (THREE.ACESFilmicToneMapping) renderer.toneMapping = THREE.ACESFilmicToneMapping;
