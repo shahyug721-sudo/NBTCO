@@ -179,12 +179,16 @@
 
   function categoryCard(c) {
     var count = PRODUCTS.filter(function (p) { return p.category === c.slug; }).length;
+    var imgTag = c.img ? '<div class="ccard__img"><img src="' + esc(c.img) + '" alt="' + esc(c.name) + '"></div>' : '';
     return '' +
       '<a class="ccard" href="category.html?cat=' + encodeURIComponent(c.slug) + '">' +
-        '<div class="ccard__no">' + esc(c.no) + '</div>' +
-        '<h3 class="ccard__name">' + esc(c.name) + '</h3>' +
-        '<p class="ccard__blurb">' + esc(c.blurb) + '</p>' +
-        '<span class="ccard__cta">' + count + ' product' + (count === 1 ? "" : "s") + ' →</span>' +
+        imgTag +
+        '<div class="ccard__body">' +
+          '<div class="ccard__no">' + esc(c.no) + '</div>' +
+          '<h3 class="ccard__name">' + esc(c.name) + '</h3>' +
+          '<p class="ccard__blurb">' + esc(c.blurb) + '</p>' +
+          '<span class="ccard__cta">' + count + ' product' + (count === 1 ? "" : "s") + ' →</span>' +
+        '</div>' +
       '</a>';
   }
 
