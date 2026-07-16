@@ -6,7 +6,7 @@
    enquiry buttons) is generated from the data below.
 
    Prices are INDICATIVE list prices in INR per 100 pieces, exclusive of GST,
-   transcribed from the Unbrako DFL-20 list (w.e.f. 1 April 2026) and subject
+   transcribed from our current price list (w.e.f. 1 April 2026) and subject
    to change. Final pricing is always confirmed on enquiry.
    ========================================================================= */
 
@@ -14,7 +14,7 @@
 const SITE = {
   name:    "New Bharat Trading Company",
   short:   "New Bharat Trading Co.",
-  tagline: "Industrial Fasteners & Bearings · Authorised Unbrako stockist",
+  tagline: "Industrial Fasteners & Bearings · Authorised Dealer & Stockist",
   email:   "nbtcoindia@gmail.com",
     phone:   "+91 98678 33131",
   whatsapp:"919867833131",
@@ -32,7 +32,7 @@ const CATEGORIES = [
     blurb: "High-tensile hex bolts, hex & nylock nuts and spring washers to DIN / ISO / IS.",
     img: "assets/pd-hex-head-bolt-10-9.jpg" },
   { slug: "durlok", no: "03", name: "Durlok® Self-Locking",
-    blurb: "Vibration-resistant self-locking bolts, nuts and washers — Unbrako Durlok system.",
+    blurb: "Vibration-resistant self-locking bolts, nuts and washers — Durlok® self-locking system.",
     img: "assets/pd-wedge-lock-washer.jpg" },
   { slug: "construction", no: "04", name: "Construction Fasteners",
     blurb: "IS 3757 high-strength structural bolt assemblies, anchors and CE-approved range.",
@@ -60,7 +60,7 @@ const PRODUCTS = [
     img: "assets/pd-socket-head-cap-screw.jpg",
     standard: "DIN 912 · ISO 4762 · IS 2269",
     grade: "Property Class 12.9",
-    material: "Unbrako high-grade alloy steel",
+    material: "High-grade alloy steel",
     sizeRange: "M2 – M42",
     lengthRange: "3 – 300 mm",
     finish: "Black thermal (self-colour); HDG / electro-galv on request",
@@ -88,7 +88,7 @@ const PRODUCTS = [
     img: "assets/pd-countersunk-socket-cap-screw.jpg",
     standard: "DIN 7991 · ISO 10642 · IS 6761",
     grade: "Property Class 12.9",
-    material: "Unbrako high-grade alloy steel",
+    material: "High-grade alloy steel",
     sizeRange: "M3 – M24",
     lengthRange: "6 – 130 mm",
     finish: "Black thermal; HDG / electro-galv on request",
@@ -116,7 +116,7 @@ const PRODUCTS = [
     img: "assets/bolt.png",
     standard: "DIN 7984 · ASME B18.3.1M",
     grade: "Property Class 10.9",
-    material: "Unbrako high-grade alloy steel",
+    material: "High-grade alloy steel",
     sizeRange: "M4 – M20",
     lengthRange: "8 – 100 mm",
     finish: "Black thermal; HDG / electro-galv on request",
@@ -143,7 +143,7 @@ const PRODUCTS = [
     img: "assets/bolt.png",
     standard: "DIN 913–916 · ISO 4026–4029 · IS 6094",
     grade: "Property Class 45H",
-    material: "Unbrako high-grade alloy steel",
+    material: "High-grade alloy steel",
     sizeRange: "M3 – M20",
     lengthRange: "3 – 65 mm",
     finish: "Black thermal; HDG / electro-galv on request",
@@ -171,7 +171,7 @@ const PRODUCTS = [
     img: "assets/pd-button-head-socket-screw.jpg",
     standard: "ISO 7380 · DIN EN ISO 7380",
     grade: "Property Class 10.9",
-    material: "Unbrako high-grade alloy steel",
+    material: "High-grade alloy steel",
     sizeRange: "M3 – M16",
     lengthRange: "6 – 60 mm",
     finish: "Black thermal; HDG / electro-galv on request",
@@ -198,7 +198,7 @@ const PRODUCTS = [
     img: "assets/pd-socket-head-shoulder-screw.jpg",
     standard: "ISO 7379 · BS 4168 · DIN 9841",
     grade: "Property Class 12.9",
-    material: "Unbrako high-grade alloy steel",
+    material: "High-grade alloy steel",
     sizeRange: "M5 – M20 thread (Ø6 – Ø24 shoulder)",
     lengthRange: "10 – 120 mm",
     finish: "Black thermal; HDG / electro-galv on request",
@@ -340,9 +340,9 @@ const PRODUCTS = [
     category: "durlok",
     featured: false,
     img: "assets/bolt.png",
-    standard: "Unbrako Durlok® system",
+    standard: "Durlok® self-locking system",
     grade: "Property Class 10.9 / 12.9",
-    material: "Unbrako high-grade alloy steel",
+    material: "High-grade alloy steel",
     sizeRange: "M5 – M24",
     lengthRange: "On request",
     finish: "Self-colour / coated",
